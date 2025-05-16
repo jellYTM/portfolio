@@ -1,13 +1,15 @@
-import './index.css'
+import './AppApp.css'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import Home from './Home.tsx'
 
 function App() {
   return (
     <>
-      <div>
+      <BrowserRouter>
         <header>
           <nav>
             <ul>
-              <li><a href="#">ホーム</a></li>
+              <li><link to="#">ホーム</a></li>
               <li><a href="#">About me</a></li>
               <li><a href="#">スキル</a></li>
               <li><a href="#">開発物</a></li>
@@ -24,13 +26,13 @@ function App() {
           <p>Affliation: Nagoya univ. Department of Biological Science </p>
           <p>Dream: Enginier & Researcher in biological science</p>
           <p>Hobby: Coding and Reading book
-          <p></p>
+          <p>Favorite: Mcdnald's</p>
           </p>
         </div>
         <h2>Skill</h2>
         <h2>Works</h2>
         <h2>Contact</h2>
-      </div>
+      </BrowserRouter>
     </>
   )
 }
