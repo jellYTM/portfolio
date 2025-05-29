@@ -14,6 +14,7 @@ nav {
 nav ul {
   display: flex;
   margin: 0;
+  padding: 0git;
 }
 
 nav ul li {
@@ -26,6 +27,16 @@ nav ul li {
   @media (max-width: 600px) {
     font-size: 12px;
     padding: 20px 10px 20px;
+  }
+}
+
+nav ul img {
+  height: 80px;
+  width: auto;
+  padding: 4px;
+
+  @media (max-width: 600px) {
+    height: 50px;
   }
 }
 
