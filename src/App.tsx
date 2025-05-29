@@ -1,18 +1,18 @@
 import './App.css'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Header from './Header.tsx'
-import Home from './Home.tsx'
-import AboutMe from './AboutMe.tsx'
-import Skill from './Skill.tsx'
-import Products from './Products.tsx'
-import MyJellyfish from './MyJellyfish.tsx'
-import Research from './Research.tsx'
-import Footer from './Footer.tsx'
+import Header from './pages/Header.tsx'
+import Home from './pages/Home.tsx'
+import AboutMe from './pages/AboutMe.tsx'
+import Skill from './pages/Skill.tsx'
+import Products from './pages/Products.tsx'
+import MyJellyfish from './pages/MyJellyfish.tsx'
+import Research from './pages/Research.tsx'
+import Footer from './pages/Footer.tsx'
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <div className='content'>
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
@@ -22,9 +22,9 @@ function App() {
           <Route path='/MyJellyfish' element={<MyJellyfish />} />
           <Route path='/Research' element={<Research />} />
         </Routes>
-        <Footer />
-      </BrowserRouter>
-    </>
+      </div>
+      <Footer />
+    </BrowserRouter>
   )
 }
 

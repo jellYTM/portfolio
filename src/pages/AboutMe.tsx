@@ -9,9 +9,8 @@ function AboutMe() {
                 <p>BirthDay: 2004 12/1 </p>
                 <p>Affliation: Nagoya univ. Department of Biological Science </p>
                 <p>Dream: Enginier & Researcher in biological science</p>
-                <p>Hobby: Coding and Reading book
+                <p>Hobby: Coding and Reading book</p>
                 <p>Favorite: Mcdnald's</p>
-                </p>
             </div>
         </>
     )
