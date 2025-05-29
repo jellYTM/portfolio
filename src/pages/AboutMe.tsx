@@ -2,7 +2,7 @@ import Me1 from '../assets/Me1.jpg'
 
 function AboutMe() {
     return (
-        <> 
+        <div className='container'> 
             <h1>About Me</h1>
             <div id="Base-and-img">
                 <img src={Me1} />
@@ -15,7 +15,7 @@ function AboutMe() {
                     <p><span>学年</span>： 学部 2年</p>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

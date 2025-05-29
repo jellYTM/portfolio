@@ -13,6 +13,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 600px) {
+    p {font-size: 12px;}
+    li {font-size: 12px;}
+  }
 }
 
 a {
@@ -26,10 +31,11 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  display: block;
+
 }
 
 h1 {
