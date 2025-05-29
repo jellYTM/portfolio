@@ -28,5 +28,40 @@ nav ul li {
 #footer {
   width: 100%;
   background-color: dimgray;
-  padding-bottom: 16px;
+  padding: 16px;
+  ul {list-style-type: none;}
+}
+
+.CenterDesign {
+  text-align: center;
+  margin: auto;
+}
+
+#Base-and-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#Base-and-img img {
+  width: auto;
+  height: 50%;
+  
+  margin-right: 30px;
+  object-fit: contain;
+}
+
+#BaseInfo {
+  margin-left: 30px;
+}
+
+#BaseInfo p {
+  display: flex;
+  align-items: baseline; 
+}
+
+#BaseInfo p span:first-child {
+  width: 80px; 
+  text-align: left;
+  margin-right: 10px;
 }

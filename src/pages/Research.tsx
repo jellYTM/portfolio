@@ -1,6 +1,6 @@
 function Research() {
     return (
-        <p>Coming soon...</p>
+        <div className="CenterDesign"><p>Coming soon...</p></div>
     )
 }
 

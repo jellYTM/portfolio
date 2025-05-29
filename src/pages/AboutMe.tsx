@@ -1,16 +1,19 @@
+import Me1 from '../assets/Me1.jpg'
+
 function AboutMe() {
     return (
         <> 
-            <h1>Masaki Takeuchi</h1>
-            <div>
-                <h2>About me</h2>
-                <p>Name: Masaki Takeuchi（竹内優輝）</p>
-                <p>Gender: Male</p>
-                <p>BirthDay: 2004 12/1 </p>
-                <p>Affliation: Nagoya univ. Department of Biological Science </p>
-                <p>Dream: Enginier & Researcher in biological science</p>
-                <p>Hobby: Coding and Reading book</p>
-                <p>Favorite: Mcdnald's</p>
+            <h1>About Me</h1>
+            <div id="Base-and-img">
+                <img src={Me1} />
+                <div id="BaseInfo">
+                    <h2>Base Info</h2>
+                    <p><span>氏名</span>： 竹内 優輝 （Masaki Takeuchi）</p>
+                    <p><span>性別</span>： 男</p>
+                    <p><span>誕生日</span>： 2004年 12月 1日</p>
+                    <p><span>所属</span>： 名古屋大学 理学部 生命理学科</p>
+                    <p><span>学年</span>： 学部 2年</p>
+                </div>
             </div>
         </>
     )

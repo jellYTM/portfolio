@@ -1,7 +1,7 @@
 function Home() {
     return (
-        <div>
-            <h1>Prortfolio</h1>
+        <div className="CenterDesign">
+            <h1>My Portfolio</h1>
             <h2>Masaki Takeuchi</h2>
         </div>
     )
