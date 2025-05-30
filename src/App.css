@@ -77,7 +77,12 @@ nav ul li:hover {
 
 .CenterDesign {
   text-align: center;
-  margin: auto;
+  margin: auto, 0;
+}
+
+#Home {
+  background: radial-gradient(#30D2BE 0%, #77efff 51%, #81f9f3 100%);
+  display: block;
 }
 
 #Base-and-img {
