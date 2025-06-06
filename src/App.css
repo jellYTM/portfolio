@@ -1,21 +1,60 @@
-.CenterDesign {
-  text-align: center;
-  margin: auto, 0;
-}
-
 .container {
   margin-top: 64px;
 }
 
 #Home {
-  background: radial-gradient(#30D2BE 0%, #77efff 51%, #81f9f3 100%);
-  display: block;
+  display: flex;
+}
+
+#HomeTitle {
+  text-align: center;
+
+  position: absolute;
+  top: 88px;
+
+  height: calc(100vh - 88px);
+  width: 100vw;
+  z-index: 1;
+
+  background: rgba(10, 10, 10, 0.2);
+
+  @media (max-width: 600px) {
+    top: 58px;
+    height: calc(100vh - 58px)
+  }
+
+  @media screen and (min-width: 1000px) {
+    width: 60vw;
+    left: 0;
+    background: linear-gradient(to right, rgba(10, 10, 10, 1) 66%, rgba(10, 10, 10, 0)) ;
+  }
+}
+
+#JellyfishApp {
+  position: absolute;
+  top: 88px;
+
+  height: calc(100vh - 88px);
+  width: 100vw;
+
+  @media (max-width: 600px) {
+    top: 58px;
+    height: calc(100vh - 58px)
+  }
+
+  @media screen and (min-width: 1000px) {
+    width: 60vw;
+    left: 40%;
+  }
+}
+
+.CenterDesign {
+  text-align: center;
 }
 
 #Base-and-img {
   display: flex;
   margin: 0 auto;
-  justify-content: center;
 
   @media (max-width: 600px) {
     display: block;

@@ -1,14 +1,15 @@
-
+import JellyfishApp from "./JellyfishAnimation.tsx"
 
 function Home() {
     return (
-        <section>
-            <div className="CenterDesign">
+        <div id="Home">
+            <div id="HomeTitle">
                 <h1>My Portfolio</h1>
                 <h2>Masaki Takeuchi</h2>
                 <p>現在 製作中🔨👷‍♂️</p>
             </div>
-        </section>
+            <div id="JellyfishApp-container"><JellyfishApp /></div>
+        </div>
     )
 }
 
