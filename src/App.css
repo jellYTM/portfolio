@@ -13,20 +13,14 @@
   top: 88px;
 
   height: calc(100vh - 88px);
-  width: 100vw;
+  width: 100%;
   z-index: 1;
 
-  background: rgba(10, 10, 10, 0.2);
+  background-color: rgba(10, 10, 10, 0.2);
 
   @media (max-width: 600px) {
     top: 58px;
-    height: calc(100vh - 58px)
-  }
-
-  @media screen and (min-width: 1000px) {
-    width: 60vw;
-    left: 0;
-    background: linear-gradient(to right, rgba(10, 10, 10, 1) 66%, rgba(10, 10, 10, 0)) ;
+    height: calc(100vh - 58px);
   }
 }
 
@@ -35,16 +29,11 @@
   top: 88px;
 
   height: calc(100vh - 88px);
-  width: 100vw;
+  width: 100%;
 
   @media (max-width: 600px) {
     top: 58px;
     height: calc(100vh - 58px)
-  }
-
-  @media screen and (min-width: 1000px) {
-    width: 60vw;
-    left: 40%;
   }
 }
 

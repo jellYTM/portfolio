@@ -1,6 +1,6 @@
 import { useMemo, useState, useRef, useEffect } from "react";
 import * as THREE from "three";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Instance, Instances } from "@react-three/drei";
 
 const generateSquare = (radius: number, y: number) => {
@@ -22,41 +22,53 @@ const generateOctagon = (radius: number, y: number) => {
 };
 
 interface PatternConfig {
-  scale1: number;
-  scale2: number;
-  scale3: number;
-  scale4: number;
-  scale5: number;
+  scale1: number; // top, mid1
+  scale2: number; // mid2
+  scale3: number; // mid3
+  scale4: number; // bottom
+  scale5: number; // oralarm1, 2, 3
+  scale6: number; // oralarm4
 }
 
-const createPattern = ({ scale1, scale2, scale3, scale4, scale5 }: PatternConfig) => {
-  const center = new THREE.Vector3(0, 0.7, 0);
+const createPattern = ({ scale1, scale2, scale3, scale4, scale5, scale6 }: PatternConfig) => {
+  const center = new THREE.Vector3(0, 0.32, 0);
 
-  const top = generateOctagon(0.3 * scale1, 0.69);
-  const mid1 = generateOctagon(0.65 * scale1, 0.57);
-  const mid2 = generateOctagon(0.8 * scale2, 0.42);
-  const mid3 = generateOctagon(0.82 * scale3, 0.38)
-  const bottom = generateOctagon(0.8 * scale4, 0.3)
-  const oralarm1 = generateSquare(0.05 * scale5, 0.6);
-  const oralarm2 = generateSquare(0.13 * scale5, 0.5);
-  const oralarm3 = generateSquare(0.2 * scale5, 0.2);
-  const oralarm4 = generateSquare(0.15 * scale5, 0);
+  const top = generateOctagon(0.3 * scale1, 0.31);
+  const mid1 = generateOctagon(0.65 * scale1, 0.19);
+  const mid2 = generateOctagon(0.8 * scale2, 0.04);
+  const mid3 = generateOctagon(0.82 * scale3, 0)
+  const bottom = generateOctagon(0.8 * scale4, -0.08)
+  const oralarm1 = generateSquare(0.05 * scale5, 0.22);
+  const oralarm2 = generateSquare(0.13 * scale5, 0.12);
+  const oralarm3 = generateSquare(0.2 * scale5, -0.18);
+  const oralarm4 = generateSquare(0.4 * scale6, -0.38);
 
   return { center, top, mid1, mid2, mid3, bottom, oralarm1, oralarm2, oralarm3, oralarm4};
 };
 
 // Three skeleton patterns you can toggle through
 const patternConfigs: PatternConfig[] = [
-  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.9 }, 
-  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.9 }, 
-  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.9 }, 
-  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.9 }, 
-  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.9 }, 
-  { scale1: 0.85, scale2: 0.8, scale3: 0.8, scale4: 0.8, scale5: 0.7 }, 
-  { scale1: 0.8, scale2: 0.75, scale3: 0.75, scale4: 0.7, scale5: 0.6 }, 
-  { scale1: 0.75, scale2: 0.65, scale3: 0.6, scale4: 0.6, scale5: 0.5 }, 
-  { scale1: 0.8, scale2: 0.75, scale3: 0.75, scale4: 0.7, scale5: 0.6 }, 
-  { scale1: 0.85, scale2: 0.8, scale3: 0.8, scale4: 0.8, scale5: 0.7 }, 
+  // scale1:(top, mid1), scale2:mid2, scale3:mid3, scale4:bottom, scale5:(oralarm1, 2, 3), scale6: oralarm4
+  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.8, scale5: 0.9, scale6: 0.62 },  // 収縮開始
+  { scale1: 0.875, scale2: 0.85, scale3: 0.85, scale4: 0.75, scale5: 0.9, scale6: 0.62 }, 
+  { scale1: 0.85, scale2: 0.8, scale3: 0.8, scale4: 0.7, scale5: 0.9, scale6: 0.62 }, 
+  { scale1: 0.825, scale2: 0.775, scale3: 0.75, scale4: 0.65, scale5: 0.85, scale6: 0.62 }, 
+  { scale1: 0.8, scale2: 0.75, scale3: 0.7, scale4: 0.6, scale5: 0.8, scale6: 0.62 }, 
+  { scale1: 0.785, scale2: 0.725, scale3: 0.675, scale4: 0.575, scale5: 0.75, scale6: 0.62 }, 
+  { scale1: 0.77, scale2: 0.7, scale3: 0.65, scale4: 0.55, scale5: 0.7, scale6: 0.6 }, 
+  { scale1: 0.76, scale2: 0.65, scale3: 0.6, scale4: 0.5, scale5: 0.65, scale6: 0.55 }, 
+  { scale1: 0.75, scale2: 0.6, scale3: 0.55, scale4: 0.45, scale5: 0.6, scale6: 0.5 }, // 収縮完了
+  { scale1: 0.76, scale2: 0.65, scale3: 0.6, scale4: 0.5, scale5: 0.575, scale6: 0.45 },
+  { scale1: 0.77, scale2: 0.7, scale3: 0.65, scale4: 0.55, scale5: 0.55, scale6: 0.4 }, // 弛緩開始
+  { scale1: 0.785, scale2: 0.725, scale3: 0.675, scale4: 0.575, scale5: 0.575, scale6: 0.35 },
+  { scale1: 0.8, scale2: 0.75, scale3: 0.7, scale4: 0.6, scale5: 0.6, scale6: 0.3 }, 
+  { scale1: 0.85, scale2: 0.8, scale3: 0.8, scale4: 0.7, scale5: 0.7, scale6: 0.4 },  //弛緩完了
+  { scale1: 0.875, scale2: 0.85, scale3: 0.85, scale4: 0.8, scale5: 0.75, scale6: 0.45 },
+  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.8, scale6: 0.5},  // 停止時間
+  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.8, scale6: 0.525},
+  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.9, scale6: 0.55 }, 
+  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.9, scale6: 0.575 },
+  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.9, scale6: 0.6 }, 
 ];
 
 const patterns = patternConfigs.map(createPattern);
@@ -130,7 +142,7 @@ const Skeleton = ({ pattern }: { pattern: Pattern }) => {
   return (
     <>
       <Instances limit={joints.length}>
-        <sphereGeometry args={[0.03, 12, 12]} />
+        <sphereGeometry args={[0.02, 12, 12]} />
         <meshStandardMaterial color="white" />
         {joints.map((j) => (
           <Instance key={j.id} position={j.pos} />
@@ -152,11 +164,27 @@ const JellyfishScene = () => {
   useFrame((_, delta) => {
     timer.current += delta;
 
-    if (timer.current > 0.1) {
+    if (timer.current > 0.05) {
       timer.current = 0;
       setIdx((i) => (i + 1) % patterns.length);
     }
   });
+
+  const { camera, size } = useThree();
+
+  useEffect(() => {
+    if (size.width <= 600) {
+      let pos = 1.1 + (600 - size.width) * 0.002; 
+      camera.position.set(pos, 0, pos);
+    } 
+    else if (600 < size.width && size.width <= 1000) {
+      camera.position.set(1.1, 0, 1.1);
+    }
+    else if (1000 < size.width) {
+      camera.position.set(1.2, 0, 1.2)
+    }
+    camera.lookAt(0, 0, 0);
+  }, [camera, size]);
 
   
 
@@ -176,10 +204,7 @@ const JellyfishScene = () => {
 export default function JellyfishApp() {
     return (
         <div id="JellyfishApp">
-        <Canvas camera={{ 
-            position: [0, 0.3, 1.8] 
-            }}
-            id="canvas">
+        <Canvas id="canvas">
             <JellyfishScene />
         </Canvas>
         </div>

@@ -125,6 +125,10 @@ h1 {
   font-size: 4.0em;
 
   margin: 64px auto 92px;
+
+  @media (max-width: 600px) {
+    font-size: 3.2em;
+  }
 }
 
 h2 {
