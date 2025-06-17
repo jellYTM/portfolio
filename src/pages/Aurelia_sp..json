@@ -1,0 +1,34 @@
+{
+    "data" : [
+        { 
+            "flameID": 0,
+            "umbrella" :{
+                "h0": 2.0, "h1": 1.5, "h2": 1.0, "h3": 0.5, "h4": 0.25, 
+                "r1": "number", "r2": "number", "r3": 3.3, "r4": "number", "r5": 3.3
+            },
+            "oral_arm" :{
+                "h0": "number", "h1": "number", "h2": "number", "h3": "number", "h4": "number", "h5": "number", "h6": "number",
+                "r1": "number", "r2": "number", "r3": "number", "r4": "number", "r5": "number", "r6": "number"
+            },
+            "tentacle" :{
+                "h1": "number", "h2": "number",
+                "r1": "number", "r2": "number"
+            }
+        },
+        {
+            "flameID": 1,
+            "umbrella" :{
+                "h0": 2, "h1": "number", "h2": "number", "h3": "number", "h4": "number", 
+                "r1": "number", "r2": "number", "r3": "number", "r4": "number", "r5": "number"
+            },
+            "oral_arm" :{
+                "h0": "number", "h1": "number", "h2": "number", "h3": "number", "h4": "number", "h5": "number", "h6": "number",
+                "r1": "number", "r2": "number", "r3": "number", "r4": "number", "r5": "number", "r6": "number"
+            },
+            "tentacle" :{
+                "h1": "number", "h2": "number",
+                "r1": "number", "r2": "number"
+            }
+        },
+    ]
+}

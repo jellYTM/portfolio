@@ -2,6 +2,7 @@ import { useMemo, useState, useRef, useEffect } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Instance, Instances } from "@react-three/drei";
+import * as AureliaData from "./Aurelia_sp..json"
 
 const generateSquare = (radius: number, y: number) => {
   const pts: THREE.Vector3[] = [];
@@ -22,29 +23,49 @@ const generateOctagon = (radius: number, y: number) => {
 };
 
 interface PatternConfig {
-  scale1: number; // top, mid1
-  scale2: number; // mid2
-  scale3: number; // mid3
-  scale4: number; // bottom
-  scale5: number; // oralarm1, 2, 3
-  scale6: number; // oralarm4
+  umbrella :{
+    h0: number; h1: number; h2: number; h3: number; h4: number; 
+    r1: number; r2: number; r3: number; r4: number; r5: number;
+  },
+  oral_arm :{
+    h0: number; h1: number; h2: number; h3: number; h4: number; h5: number; h6: number;
+    r1: number; r2: number; r3: number; r4: number; r5: number; r6: number;
+  },
+  tentacle :{
+    h1: number; h2: number;
+    r1: number; r2: number;
+  }
 }
 
-const createPattern = ({ scale1, scale2, scale3, scale4, scale5, scale6 }: PatternConfig) => {
-  const center = new THREE.Vector3(0, 0.32, 0);
+const createPattern = ({ umbrella, oral_arm, tentacle }: PatternConfig) => {
+  // umbrella
+  const top = new THREE.Vector3(0, umbrella.h0, 0);
+  const mid1 = generateOctagon(umbrella.r1, umbrella.h1);
+  const mid2 = generateOctagon(umbrella.r2, umbrella.h2);
+  const mid3 = generateOctagon(umbrella.r3, umbrella.h3);
+  const mid4 = generateOctagon(umbrella.r4, umbrella.h4);
+  const bottom = generateOctagon(umbrella.r5, 0);
 
-  const top = generateOctagon(0.3 * scale1, 0.31);
-  const mid1 = generateOctagon(0.65 * scale1, 0.19);
-  const mid2 = generateOctagon(0.8 * scale2, 0.04);
-  const mid3 = generateOctagon(0.82 * scale3, 0)
-  const bottom = generateOctagon(0.8 * scale4, -0.08)
-  const oralarm1 = generateSquare(0.05 * scale5, 0.22);
-  const oralarm2 = generateSquare(0.13 * scale5, 0.12);
-  const oralarm3 = generateSquare(0.2 * scale5, -0.18);
-  const oralarm4 = generateSquare(0.4 * scale6, -0.38);
+  // oral-arm
+  const oralarm0 = new THREE.Vector3(0, oral_arm.h0, 0);
+  const oralarm1 = generateSquare(oral_arm.r1, oral_arm.h1);
+  const oralarm2 = generateSquare(oral_arm.r2, oral_arm.h2);
+  const oralarm3 = generateSquare(oral_arm.r3, oral_arm.h3);
+  const oralarm4 = generateSquare(oral_arm.r4, oral_arm.h4);
+  const oralarm5 = generateSquare(oral_arm.r5, oral_arm.h5);
+  const oralarm6 = generateSquare(oral_arm.r6, oral_arm.h6);
 
-  return { center, top, mid1, mid2, mid3, bottom, oralarm1, oralarm2, oralarm3, oralarm4};
+  // tentacle
+  const tentacle1 = generateOctagon(tentacle.r1, tentacle.h1);
+  const tentacle2 = generateOctagon(tentacle.r2, tentacle.h2);
+
+  return { top, mid1, mid2, mid3, mid4, bottom, 
+            oralarm0, oralarm1, oralarm2, oralarm3, oralarm4, oralarm5, oralarm6,
+            tentacle1, tentacle2};
 };
+
+// Three skeleton patterns you can toggle through
+const patternConfigs: PatternConfig[] = [AureliaData.data[:]]
 
 // Three skeleton patterns you can toggle through
 const patternConfigs: PatternConfig[] = [
