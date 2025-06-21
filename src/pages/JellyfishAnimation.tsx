@@ -87,8 +87,9 @@ const coordinates: Coordinates = { x:0, y:0, z:0 };
 const patterns = patternConfigs.map(config => createPattern(config, coordinates));
 type Pattern = typeof patterns[number];
 
-const a = -15
-const b = 15
+const a = -12
+const b = 12
+
 
 const createOtherPattern = (patternConfigs: PatternConfig[]) => {
   let x = Math.floor(Math.random() * (b + 1 - a)) + a
@@ -114,26 +115,6 @@ const otherPattern10 = createOtherPattern(patternConfigs)
 
 
 const Skeleton = ({ pattern }: { pattern: Pattern }) => {
-
-  const joints = useMemo(() => {
-    const all: { id: string; pos: THREE.Vector3 }[] = [];
-    all.push({ id: "top", pos: pattern.top });
-    pattern.mid1.forEach((p, i) => all.push({ id: `mid1${i}`, pos: p }));
-    pattern.mid2.forEach((p, i) => all.push({ id: `mid2${i}`, pos: p }));
-    pattern.mid3.forEach((p, i) => all.push({ id: `mid3${i}`, pos: p }));
-    pattern.mid4.forEach((p, i) => all.push({ id: `mid4${i}`, pos: p }));
-    pattern.bottom.forEach((p, i) => all.push({ id: `bottom${i}`, pos: p }));
-    pattern.oral_arm1.forEach((p, i) => all.push({ id: `oral_arm1${i}`, pos: p }));
-    pattern.oral_arm2.forEach((p, i) => all.push({ id: `oral_arm2${i}`, pos: p }));
-    pattern.oral_arm3.forEach((p, i) => all.push({ id: `oral_arm3${i}`, pos: p }));
-    pattern.oral_arm4.forEach((p, i) => all.push({ id: `oral_arm4${i}`, pos: p }));
-    pattern.oral_arm5.forEach((p, i) => all.push({ id: `oral_arm5${i}`, pos: p }));
-    pattern.oral_arm6.forEach((p, i) => all.push({ id: `oral_arm6${i}`, pos: p }));
-    pattern.tentacle0.forEach((p, i) => all.push({ id: `tentacle0${i}`, pos: p }));
-    pattern.tentacle1.forEach((p, i) => all.push({ id: `tentacle1${i}`, pos: p }));
-    pattern.tentacle2.forEach((p, i) => all.push({ id: `tentacle2${i}`, pos: p }));
-    return all;
-  }, [pattern]);
 
   const connections = useMemo(() => {
     const con: [THREE.Vector3, THREE.Vector3][] = [];
@@ -189,14 +170,6 @@ const Skeleton = ({ pattern }: { pattern: Pattern }) => {
 
   return (
     <>
-      <Instances limit={joints.length}>
-        <sphereGeometry args={[0.01, 12, 12]} />
-        <meshStandardMaterial color="white" />
-        {joints.map((j) => (
-          <Instance key={j.id} position={j.pos} />
-        ))}
-      </Instances>
-
       <lineSegments geometry={lineGeometry}>
         <lineBasicMaterial linewidth={1} color="white" />
       </lineSegments>
@@ -204,10 +177,14 @@ const Skeleton = ({ pattern }: { pattern: Pattern }) => {
   );
 };
 
-const radius = 8;
+let radius = 8;
 const T = 1000;
 const arg = Math.PI * 2 / T
 let theta = 0
+
+if (window.innerWidth <= 600) {
+  radius = 12
+}
 
 const JellyfishScene = () => {
   const [idx, setIdx] = useState(0);
@@ -225,12 +202,21 @@ const JellyfishScene = () => {
     }
     
     theta += arg
-    let x = radius * Math.cos(theta)
-    let z = radius * Math.sin(theta)
+    let x = radius * Math.cos(theta / 2) * (1 + 0.3 * Math.sin(theta * 0.3))
+    let y = Math.sin(theta)
+    let z = radius * Math.sin(theta / 2) * (1 + 0.3 * Math.sin(theta * 0.3))
 
-    camera.position.set(x, 1, z)
+    camera.position.set(x, y, z)
     camera.lookAt(0, 0, 0)
   });
+
+  useEffect( () => {
+    if (window.innerWidth <= 600) {
+      radius = 12
+    } else {
+      radius = 8
+    }
+  })
 
   return (
     <>
@@ -247,6 +233,7 @@ const JellyfishScene = () => {
       <Skeleton pattern={otherPattern8[(idx+16) % patterns.length]}/>
       <Skeleton pattern={otherPattern9[(idx+18) % patterns.length]}/>
       <Skeleton pattern={otherPattern10[(idx+20) % patterns.length]}/>
+      <OrbitControls />
     </>
   );
 };
@@ -257,7 +244,7 @@ const JellyfishScene = () => {
 export default function JellyfishApp() {
     return (
         <div id="JellyfishApp">
-        <Canvas id="canvas">
+        <Canvas>
             <JellyfishScene />
         </Canvas>
         </div>

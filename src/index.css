@@ -1,4 +1,5 @@
 #root { 
+  height: 100%;
   width: 100%;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -13,11 +14,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 600px) {
-    p {font-size: 12px;}
-    li {font-size: 12px;}
-  }
 }
 
 .content {
@@ -52,7 +48,6 @@ nav ul li {
   transition: all 0.5s 0s ease;
 
   @media (max-width: 600px) {
-    font-size: 12px;
     padding: 20px 10px 20px;
   }
 }
@@ -61,6 +56,7 @@ nav ul img {
   height: 80px;
   width: auto;
   padding: 4px;
+  transition: all 0.5s 0s ease;
 
   @media (max-width: 600px) {
     height: 50px;
@@ -76,9 +72,17 @@ nav ul li:hover {
   margin: 2px;
 
   @media (max-width: 600px) {
-    font-size: 12px;
     padding: 18px 8px 18px;
   }
+}
+
+nav ul img:hover {
+  list-style: none;
+  display: block;
+  background-color: rgb(174, 174, 174);
+
+  margin: 2px;
+  padding: 2px;
 }
 
 .Link {
@@ -100,6 +104,23 @@ nav ul li:hover {
 
 #footer h3 {
   margin: 16px 16px 0;
+}
+
+p {
+  font-size: calc(1 / 170 * 100vw + 8.5px);
+}
+h2 {
+  font-size: calc(4 / 170 * 100vw + 9.9px);
+}
+
+@media (max-width: 600px) {
+    p {font-size: 12px;}
+    li {font-size: 12px;}
+}
+
+@media (max-width: 360px) {
+  p {font-size: 10px;}
+  li {font-size: 10px;}
 }
 
 a {
@@ -128,18 +149,6 @@ h1 {
 
   @media (max-width: 600px) {
     font-size: 3.2em;
-  }
-}
-
-h2 {
-  text-align: center;
-  font-size: 2.8em;
-
-  margin: 64px 100px 20px;
-
-  @media (max-width:600px) {
-    font-size: 2.8em;
-    margin: 64px 50px 20px;
   }
 }
 

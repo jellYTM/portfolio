@@ -1,5 +1,7 @@
 .container {
   margin-top: 64px;
+  z-index: 1;
+  position: relative;
 }
 
 #Home {
@@ -24,7 +26,7 @@
   }
 }
 
-#JellyfishApp {
+#JellyfishApp-container #JellyfishApp {
   position: absolute;
   top: 88px;
 
@@ -37,12 +39,38 @@
   }
 }
 
+#JellyfishApp-background {
+  position: absolute;
+  top: 88px;
+
+  height: calc(100vh - 88px);
+  width: 100%;
+
+  @media (max-width: 600px) {
+    height: calc(100vh - 58px)
+  }
+}
+
+#JellyfishApp-background #JellyfishApp {
+  position: absolute;
+  opacity: 0.5;
+
+  height: calc(100vh - 88px);
+  width: 100%;
+
+  @media (max-width: 600px) {
+    height: calc(100vh - 58px)
+  }
+}
+
 .CenterDesign {
   text-align: center;
 }
 
-#Base-and-img {
+.flex-box {
+  z-index: 1;
   display: flex;
+  justify-content: center;
   margin: 0 auto;
 
   @media (max-width: 600px) {
@@ -50,36 +78,48 @@
   }
 }
 
-#Base-and-img img {
-  width: 20%;
-  max-width: 152px;
-  height: auto;
-  
-  margin: 0 5% 0 15%;
+.flexImg {
+  width: 50%;
+
+  img {
+    width: 50%;
+    height: auto;
+    margin: 0 20%;
+  }
 
   @media (max-width: 600px) {
-    display: block;
-    margin: 0 auto;
-    width: 30%;
+  width: 100%;
+    img {
+      width: 50%;
+      display: block;
+      margin: 0 25%;
+    }
   }
 }
 
-#BaseInfo {
+
+
+.flexInfo {
   width: 50%;
-  margin: 0 5%;
+  margin: 0 20px;
+
+  @media (min-width: 600px) {
+  h2 {margin-top: 0;}
+  }
 
   @media (max-width: 600px) {
     margin: auto;
     width: 65%;
   }
+
 }
 
-#BaseInfo p {
+.flexInfo p {
   display: flex;
   align-items: baseline; 
 }
 
-#BaseInfo p span:first-child {
+.flex p span:first-child {
   width: 80px; 
   text-align: left;
   margin-right: 10px;
@@ -88,6 +128,10 @@
     width: 40px;
     margin-right: 10px;
   }
+}
+
+.centerTitle {
+  position: relative;
 }
 
 .wrap-flexbox {
