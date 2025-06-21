@@ -1,7 +1,7 @@
 import { useMemo, useState, useRef, useEffect } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { OrbitControls, Instance, Instances } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import * as AureliaData from "./Aurelia_sp..json"
 
 const generateSquare = (radius: number, x: number, y: number, z:number) => {
@@ -164,9 +164,6 @@ const Skeleton = ({ pattern }: { pattern: Pattern }) => {
       lineGeometry.dispose();
     };
   }, [lineGeometry]);
-
-  const v_color = Math.round(256 / AureliaData.data.length)  * (pattern.frameID + 1) - 1
-  const rgb = `rgb(${v_color}, ${(v_color + 85) % 256}, ${(v_color + 170) % 256})`
 
   return (
     <>
