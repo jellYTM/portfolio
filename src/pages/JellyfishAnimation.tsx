@@ -4,25 +4,36 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Instance, Instances } from "@react-three/drei";
 import * as AureliaData from "./Aurelia_sp..json"
 
-const generateSquare = (radius: number, y: number) => {
+const generateSquare = (radius: number, x: number, y: number, z:number) => {
   const pts: THREE.Vector3[] = [];
   for (let i = 0; i < 4; i++) {
     const angle = (i / 4) * Math.PI * 2;
-    pts.push(new THREE.Vector3(Math.cos(angle) * radius, y, Math.sin(angle) * radius));
+    pts.push(new THREE.Vector3(x + Math.cos(angle) * radius, y, z + Math.sin(angle) * radius));
   }
   return pts;
 };
 
-const generateOctagon = (radius: number, y: number) => {
+const generateOctagon = (radius: number, x: number, y: number, z:number) => {
   const pts: THREE.Vector3[] = [];
   for (let i = 0; i < 8; i++) {
     const angle = (i / 8) * Math.PI * 2;
-    pts.push(new THREE.Vector3(Math.cos(angle) * radius, y, Math.sin(angle) * radius));
+    pts.push(new THREE.Vector3(x + Math.cos(angle) * radius, y, z + Math.sin(angle) * radius));
+  }
+  return pts;
+};
+
+const generateTentacle = (radius: number, x: number, y: number, z:number) => {
+  const pts: THREE.Vector3[] = [];
+  radius = radius * Math.cos(Math.PI * 2 / 16)
+  for (let i = 0; i < 8; i++) {
+    const angle = (i / 8 + 1 / 16) * Math.PI * 2;
+    pts.push(new THREE.Vector3(x + Math.cos(angle) * radius, y, z + Math.sin(angle) * radius));
   }
   return pts;
 };
 
 interface PatternConfig {
+  frameID : number,
   umbrella :{
     h0: number; h1: number; h2: number; h3: number; h4: number; 
     r1: number; r2: number; r3: number; r4: number; r5: number;
@@ -37,79 +48,90 @@ interface PatternConfig {
   }
 }
 
-const createPattern = ({ umbrella, oral_arm, tentacle }: PatternConfig) => {
+interface Coordinates {
+  x: number;
+  y: number;
+  z: number;
+}
+
+const createPattern = ({ frameID, umbrella, oral_arm, tentacle }: PatternConfig, { x, y, z }: Coordinates) => {
   // umbrella
-  const top = new THREE.Vector3(0, umbrella.h0, 0);
-  const mid1 = generateOctagon(umbrella.r1, umbrella.h1);
-  const mid2 = generateOctagon(umbrella.r2, umbrella.h2);
-  const mid3 = generateOctagon(umbrella.r3, umbrella.h3);
-  const mid4 = generateOctagon(umbrella.r4, umbrella.h4);
-  const bottom = generateOctagon(umbrella.r5, 0);
+  const top = new THREE.Vector3(x, y + umbrella.h0, z);
+  const mid1 = generateOctagon(umbrella.r1, x, y + umbrella.h1, z);
+  const mid2 = generateOctagon(umbrella.r2, x, y + umbrella.h2, z);
+  const mid3 = generateOctagon(umbrella.r3, x, y + umbrella.h3, z);
+  const mid4 = generateOctagon(umbrella.r4, x, y + umbrella.h4, z);
+  const bottom = generateOctagon(umbrella.r5, x, y, z);
 
   // oral-arm
-  const oralarm0 = new THREE.Vector3(0, oral_arm.h0, 0);
-  const oralarm1 = generateSquare(oral_arm.r1, oral_arm.h1);
-  const oralarm2 = generateSquare(oral_arm.r2, oral_arm.h2);
-  const oralarm3 = generateSquare(oral_arm.r3, oral_arm.h3);
-  const oralarm4 = generateSquare(oral_arm.r4, oral_arm.h4);
-  const oralarm5 = generateSquare(oral_arm.r5, oral_arm.h5);
-  const oralarm6 = generateSquare(oral_arm.r6, oral_arm.h6);
+  const oral_arm0 = new THREE.Vector3(x, y + umbrella.h0 - oral_arm.h0, z);
+  const oral_arm1 = generateSquare(oral_arm.r1, x, y + umbrella.h0 - oral_arm.h1, z);
+  const oral_arm2 = generateSquare(oral_arm.r2, x, y + umbrella.h0 - oral_arm.h2, z);
+  const oral_arm3 = generateSquare(oral_arm.r3, x, y + umbrella.h0 - oral_arm.h3, z);
+  const oral_arm4 = generateSquare(oral_arm.r4, x, y + umbrella.h0 - oral_arm.h4, z);
+  const oral_arm5 = generateSquare(oral_arm.r5, x, y + umbrella.h0 - oral_arm.h5, z);
+  const oral_arm6 = generateSquare(oral_arm.r6, x, y + umbrella.h0 - oral_arm.h6, z);
 
   // tentacle
-  const tentacle1 = generateOctagon(tentacle.r1, tentacle.h1);
-  const tentacle2 = generateOctagon(tentacle.r2, tentacle.h2);
+  const tentacle0 = generateTentacle(umbrella.r5, x, y, z)
+  const tentacle1 = generateTentacle(tentacle.r1, x, y - tentacle.h1, z);
+  const tentacle2 = generateTentacle(tentacle.r2, x, y - tentacle.h2, z);
 
-  return { top, mid1, mid2, mid3, mid4, bottom, 
-            oralarm0, oralarm1, oralarm2, oralarm3, oralarm4, oralarm5, oralarm6,
-            tentacle1, tentacle2};
+  return { frameID, top, mid1, mid2, mid3, mid4, bottom, 
+            oral_arm0, oral_arm1, oral_arm2, oral_arm3, oral_arm4, oral_arm5, oral_arm6,
+            tentacle0, tentacle1, tentacle2};
 };
 
-// Three skeleton patterns you can toggle through
-const patternConfigs: PatternConfig[] = [AureliaData.data[:]]
-
-// Three skeleton patterns you can toggle through
-const patternConfigs: PatternConfig[] = [
-  // scale1:(top, mid1), scale2:mid2, scale3:mid3, scale4:bottom, scale5:(oralarm1, 2, 3), scale6: oralarm4
-  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.8, scale5: 0.9, scale6: 0.62 },  // 収縮開始
-  { scale1: 0.875, scale2: 0.85, scale3: 0.85, scale4: 0.75, scale5: 0.9, scale6: 0.62 }, 
-  { scale1: 0.85, scale2: 0.8, scale3: 0.8, scale4: 0.7, scale5: 0.9, scale6: 0.62 }, 
-  { scale1: 0.825, scale2: 0.775, scale3: 0.75, scale4: 0.65, scale5: 0.85, scale6: 0.62 }, 
-  { scale1: 0.8, scale2: 0.75, scale3: 0.7, scale4: 0.6, scale5: 0.8, scale6: 0.62 }, 
-  { scale1: 0.785, scale2: 0.725, scale3: 0.675, scale4: 0.575, scale5: 0.75, scale6: 0.62 }, 
-  { scale1: 0.77, scale2: 0.7, scale3: 0.65, scale4: 0.55, scale5: 0.7, scale6: 0.6 }, 
-  { scale1: 0.76, scale2: 0.65, scale3: 0.6, scale4: 0.5, scale5: 0.65, scale6: 0.55 }, 
-  { scale1: 0.75, scale2: 0.6, scale3: 0.55, scale4: 0.45, scale5: 0.6, scale6: 0.5 }, // 収縮完了
-  { scale1: 0.76, scale2: 0.65, scale3: 0.6, scale4: 0.5, scale5: 0.575, scale6: 0.45 },
-  { scale1: 0.77, scale2: 0.7, scale3: 0.65, scale4: 0.55, scale5: 0.55, scale6: 0.4 }, // 弛緩開始
-  { scale1: 0.785, scale2: 0.725, scale3: 0.675, scale4: 0.575, scale5: 0.575, scale6: 0.35 },
-  { scale1: 0.8, scale2: 0.75, scale3: 0.7, scale4: 0.6, scale5: 0.6, scale6: 0.3 }, 
-  { scale1: 0.85, scale2: 0.8, scale3: 0.8, scale4: 0.7, scale5: 0.7, scale6: 0.4 },  //弛緩完了
-  { scale1: 0.875, scale2: 0.85, scale3: 0.85, scale4: 0.8, scale5: 0.75, scale6: 0.45 },
-  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.8, scale6: 0.5},  // 停止時間
-  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.8, scale6: 0.525},
-  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.9, scale6: 0.55 }, 
-  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.9, scale6: 0.575 },
-  { scale1: 0.9, scale2: 0.9, scale3: 0.9, scale4: 0.9, scale5: 0.9, scale6: 0.6 }, 
-];
-
-const patterns = patternConfigs.map(createPattern);
-
+const patternConfigs: PatternConfig[] = AureliaData.data;
+const coordinates: Coordinates = { x:0, y:0, z:0 };
+const patterns = patternConfigs.map(config => createPattern(config, coordinates));
 type Pattern = typeof patterns[number];
+
+const a = -15
+const b = 15
+
+const createOtherPattern = (patternConfigs: PatternConfig[]) => {
+  let x = Math.floor(Math.random() * (b + 1 - a)) + a
+  let y = Math.floor(Math.random() * (b + 1 - a)) + a
+  let z = Math.floor(Math.random() * (b + 1 - a)) + a
+  const otherPattern = patternConfigs.map(config => createPattern(config, {x:x, y:y, z:z}));
+
+  return otherPattern
+}
+  
+const otherPattern1 = createOtherPattern(patternConfigs)
+const otherPattern2 = createOtherPattern(patternConfigs)
+const otherPattern3 = createOtherPattern(patternConfigs)
+const otherPattern4 = createOtherPattern(patternConfigs)
+const otherPattern5 = createOtherPattern(patternConfigs)
+const otherPattern6 = createOtherPattern(patternConfigs)
+const otherPattern7 = createOtherPattern(patternConfigs)
+const otherPattern8 = createOtherPattern(patternConfigs)
+const otherPattern9 = createOtherPattern(patternConfigs)
+const otherPattern10 = createOtherPattern(patternConfigs)
+
+
+
 
 const Skeleton = ({ pattern }: { pattern: Pattern }) => {
 
   const joints = useMemo(() => {
     const all: { id: string; pos: THREE.Vector3 }[] = [];
-    all.push({ id: "center", pos: pattern.center });
-    pattern.top.forEach((p, i) => all.push({ id: `top${i}`, pos: p }));
+    all.push({ id: "top", pos: pattern.top });
     pattern.mid1.forEach((p, i) => all.push({ id: `mid1${i}`, pos: p }));
     pattern.mid2.forEach((p, i) => all.push({ id: `mid2${i}`, pos: p }));
     pattern.mid3.forEach((p, i) => all.push({ id: `mid3${i}`, pos: p }));
+    pattern.mid4.forEach((p, i) => all.push({ id: `mid4${i}`, pos: p }));
     pattern.bottom.forEach((p, i) => all.push({ id: `bottom${i}`, pos: p }));
-    pattern.oralarm1.forEach((p, i) => all.push({ id: `oralarm1${i}`, pos: p }));
-    pattern.oralarm2.forEach((p, i) => all.push({ id: `oralarm2${i}`, pos: p }));
-    pattern.oralarm3.forEach((p, i) => all.push({ id: `oralarm3${i}`, pos: p }));
-    pattern.oralarm4.forEach((p, i) => all.push({ id: `oralarm4${i}`, pos: p }));
+    pattern.oral_arm1.forEach((p, i) => all.push({ id: `oral_arm1${i}`, pos: p }));
+    pattern.oral_arm2.forEach((p, i) => all.push({ id: `oral_arm2${i}`, pos: p }));
+    pattern.oral_arm3.forEach((p, i) => all.push({ id: `oral_arm3${i}`, pos: p }));
+    pattern.oral_arm4.forEach((p, i) => all.push({ id: `oral_arm4${i}`, pos: p }));
+    pattern.oral_arm5.forEach((p, i) => all.push({ id: `oral_arm5${i}`, pos: p }));
+    pattern.oral_arm6.forEach((p, i) => all.push({ id: `oral_arm6${i}`, pos: p }));
+    pattern.tentacle0.forEach((p, i) => all.push({ id: `tentacle0${i}`, pos: p }));
+    pattern.tentacle1.forEach((p, i) => all.push({ id: `tentacle1${i}`, pos: p }));
+    pattern.tentacle2.forEach((p, i) => all.push({ id: `tentacle2${i}`, pos: p }));
     return all;
   }, [pattern]);
 
@@ -117,8 +139,9 @@ const Skeleton = ({ pattern }: { pattern: Pattern }) => {
     const con: [THREE.Vector3, THREE.Vector3][] = [];
 
     // Center → top ring
-    pattern.top.forEach((p) => con.push([pattern.center, p]));
-    pattern.oralarm1.forEach((p) => con.push([pattern.center, p]));
+    pattern.mid1.forEach((p) => con.push([pattern.top, p]));
+    con.push([pattern.top, pattern.oral_arm0])
+    pattern.oral_arm1.forEach((p) => con.push([pattern.oral_arm0, p]));
 
     // Horizontal rings (top/mid/bottom)
     const addRingConnections = (ring: THREE.Vector3[]) => {
@@ -126,23 +149,25 @@ const Skeleton = ({ pattern }: { pattern: Pattern }) => {
         con.push([ring[i], ring[(i + 1) % ring.length]]);
       }
     };
-    addRingConnections(pattern.top);
-    addRingConnections(pattern.mid1);
-    addRingConnections(pattern.mid2);
+
     addRingConnections(pattern.bottom);
 
     // Vertical connections between stacked octagons + tentacles
     for (let i = 0; i < 8; i++) {
-      con.push([pattern.top[i], pattern.mid1[i]]);
       con.push([pattern.mid1[i], pattern.mid2[i]]);
       con.push([pattern.mid2[i], pattern.mid3[i]]);
-      con.push([pattern.mid3[i], pattern.bottom[i]]);
+      con.push([pattern.mid3[i], pattern.mid4[i]]);
+      con.push([pattern.mid4[i], pattern.bottom[i]]);
+      con.push([pattern.tentacle0[i], pattern.tentacle1[i]]);
+      con.push([pattern.tentacle1[i], pattern.tentacle2[i]]);
     }
 
     for (let i=0; i < 4; i++) {
-      con.push([pattern.oralarm1[i], pattern.oralarm2[i]]);
-      con.push([pattern.oralarm2[i], pattern.oralarm3[i]]);
-      con.push([pattern.oralarm3[i], pattern.oralarm4[i]]);
+      con.push([pattern.oral_arm1[i], pattern.oral_arm2[i]]);
+      con.push([pattern.oral_arm2[i], pattern.oral_arm3[i]]);
+      con.push([pattern.oral_arm3[i], pattern.oral_arm4[i]]);
+      con.push([pattern.oral_arm4[i], pattern.oral_arm5[i]]);
+      con.push([pattern.oral_arm5[i], pattern.oral_arm6[i]]);
     }
 
     return con;
@@ -159,11 +184,13 @@ const Skeleton = ({ pattern }: { pattern: Pattern }) => {
     };
   }, [lineGeometry]);
 
+  const v_color = Math.round(256 / AureliaData.data.length)  * (pattern.frameID + 1) - 1
+  const rgb = `rgb(${v_color}, ${(v_color + 85) % 256}, ${(v_color + 170) % 256})`
 
   return (
     <>
       <Instances limit={joints.length}>
-        <sphereGeometry args={[0.02, 12, 12]} />
+        <sphereGeometry args={[0.01, 12, 12]} />
         <meshStandardMaterial color="white" />
         {joints.map((j) => (
           <Instance key={j.id} position={j.pos} />
@@ -177,44 +204,49 @@ const Skeleton = ({ pattern }: { pattern: Pattern }) => {
   );
 };
 
+const radius = 8;
+const T = 1000;
+const arg = Math.PI * 2 / T
+let theta = 0
 
 const JellyfishScene = () => {
   const [idx, setIdx] = useState(0);
   const timer = useRef(0);
 
+  const { camera } = useThree();
+
   useFrame((_, delta) => {
     timer.current += delta;
 
-    if (timer.current > 0.05) {
+    if (timer.current > 1 / AureliaData.data.length
+    ) {
       timer.current = 0;
       setIdx((i) => (i + 1) % patterns.length);
     }
+    
+    theta += arg
+    let x = radius * Math.cos(theta)
+    let z = radius * Math.sin(theta)
+
+    camera.position.set(x, 1, z)
+    camera.lookAt(0, 0, 0)
   });
-
-  const { camera, size } = useThree();
-
-  useEffect(() => {
-    if (size.width <= 600) {
-      let pos = 1.1 + (600 - size.width) * 0.002; 
-      camera.position.set(pos, 0, pos);
-    } 
-    else if (600 < size.width && size.width <= 1000) {
-      camera.position.set(1.1, 0, 1.1);
-    }
-    else if (1000 < size.width) {
-      camera.position.set(1.2, 0, 1.2)
-    }
-    camera.lookAt(0, 0, 0);
-  }, [camera, size]);
-
-  
 
   return (
     <>
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[5, 5, 5]} />
-      <Skeleton pattern={patterns[idx]} />
-      <OrbitControls />
+      <ambientLight intensity={10.0} />
+      <directionalLight position={[10, 10, 10]} />
+      <Skeleton pattern={patterns[idx]}/>
+      <Skeleton pattern={otherPattern1[(idx+2) % patterns.length]}/>
+      <Skeleton pattern={otherPattern2[(idx+4) % patterns.length]}/>
+      <Skeleton pattern={otherPattern3[(idx+6) % patterns.length]}/>
+      <Skeleton pattern={otherPattern4[(idx+8) % patterns.length]}/>
+      <Skeleton pattern={otherPattern5[(idx+10) % patterns.length]}/>
+      <Skeleton pattern={otherPattern6[(idx+12) % patterns.length]}/>
+      <Skeleton pattern={otherPattern7[(idx+14) % patterns.length]}/>
+      <Skeleton pattern={otherPattern8[(idx+16) % patterns.length]}/>
+      <Skeleton pattern={otherPattern9[(idx+18) % patterns.length]}/>
+      <Skeleton pattern={otherPattern10[(idx+20) % patterns.length]}/>
     </>
   );
 };
