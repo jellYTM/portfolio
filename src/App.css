@@ -1,14 +1,23 @@
 .container {
-  margin-top: 64px;
   z-index: 1;
   position: relative;
+
+  min-height: calc(100vh - 88px);
+
+  @media screen and (max-width: 600px) {
+    min-height: calc(100vh - 58px);
+  }
 }
 
 #Home {
   display: flex;
 }
 
-#HomeTitle {
+.wrapper {
+  position: relative;
+}
+
+#Title-wrapper {
   text-align: center;
 
   position: absolute;
@@ -16,7 +25,11 @@
 
   height: calc(100vh - 88px);
   width: 100%;
-  z-index: 1;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   background-color: rgba(10, 10, 10, 0.2);
 
@@ -24,6 +37,71 @@
     top: 58px;
     height: calc(100vh - 58px);
   }
+}
+#blueprint-container {
+  z-index: 1;
+}
+
+#blueprint1 {
+  position: absolute;
+  top: calc((100vh + 88px - 50vw) / 2);
+
+  width: 50%;
+  height: auto;
+  opacity: 0;
+  z-index: -1;
+
+  transition: all 0.1s 0s ease;
+
+  @media screen and (max-width: 600px) {
+    top: 58px;
+    left: calc(50vw - (100vh - 58px) / 2 / 2);
+
+    height: calc((100vh - 58px) / 2);
+    width: auto;
+  }
+}
+
+#blueprint2 {
+  position: absolute;
+  top: calc((100vh + 88px - 50vw) / 2);
+  left: 50%;
+
+  width: 50%;
+  height: auto;
+  opacity: 0;
+  z-index: -1;
+
+  transition: all 0.1s 0s ease;
+
+  @media screen and (max-width: 600px) {
+    top: calc((100vh - 58px) / 2 + 58px);
+    left: calc(50vw - (100vh - 58px) / 2 / 2);
+
+    height: calc((100vh - 58px) / 2);
+    width: auto;
+  }
+}
+
+@keyframes blueprint {
+  0% {
+    z-index: 0;
+    opacity: 0;
+  }
+  100% {
+    z-index: 1;
+    opacity: 1;
+  }
+}
+
+#Title-wrapper:hover ~ .blueprint {
+  animation: blueprint 1s linear;
+  animation-fill-mode: forwards;
+}
+
+#Title-wrapper:hover h1{
+  opacity: 0;
+  transition: all 0.5s 0s ease;
 }
 
 #JellyfishApp-container #JellyfishApp {
@@ -35,39 +113,53 @@
 
   @media (max-width: 600px) {
     top: 58px;
-    height: calc(100vh - 58px)
+    height: calc(100vh - 58px);
   }
 }
 
-#JellyfishApp-background {
+.JellyfishApp-background {
   position: absolute;
-  top: 88px;
+  top: 0;
 
-  height: calc(100vh - 88px);
+  height: 100%;
   width: 100%;
-
-  @media (max-width: 600px) {
-    height: calc(100vh - 58px)
-  }
 }
 
-#JellyfishApp-background #JellyfishApp {
-  position: absolute;
-  opacity: 0.5;
+.JellyfishApp-background #JellyfishApp {
+  position: block;
 
-  height: calc(100vh - 88px);
+  opacity: 0.2;
+
+  height: 100%;
   width: 100%;
-
-  @media (max-width: 600px) {
-    height: calc(100vh - 58px)
-  }
 }
 
 .CenterDesign {
   text-align: center;
 }
 
-.flex-box {
+.left-title {
+  margin-left: 1%;
+}
+
+.flex-wrapper {
+   border-bottom: 1px dashed rgb(174, 174, 174);
+   padding: 10vh 0;
+   margin: 0 3vw;
+}
+
+.flexbox-list-wrapper {
+   margin: 0 3vw;
+   padding: 0 0 10vh;
+}
+
+.last-flex-wrapper {
+   border-bottom: none;
+   padding: 10vh 0;
+   margin: 0 3vw;
+}
+
+.flex-box{
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -78,13 +170,51 @@
   }
 }
 
+.flexbox-list {
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin: 0 auto;
+}
+
+
+.flexbox-container {
+  width: 23%;
+  margin: 1%;
+  border-radius: 5%;
+  background-color: rgba(104, 104, 104, 0.5);
+
+  @media screen and (max-width: 600px) {
+    width: 47%;
+    margin: 1.5%
+  }
+}
+
+.flexbox-container-image {
+  width: 30%;
+  height : auto;
+
+  margin: 2.5vw 35%;
+}
+
+.flexbox-container-info {
+  width: 80%;
+  margin: 0 10% 2.5vw;
+
+  a {color: rgb(134, 134, 134);}
+  a:hover {color: rgb(184, 184, 184)}
+}
+
 .flexImg {
+  position: relative;
   width: 50%;
+  opacity: 1;
 
   img {
     width: 50%;
     height: auto;
-    margin: 0 20%;
+    margin: 0 30%;
   }
 
   @media (max-width: 600px) {
@@ -97,14 +227,25 @@
   }
 }
 
+.flexImg .cover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
 
+  margin-bottom: 0;
+}
+
+.flexImg .cover-img:hover {
+  opacity: 0;
+}
 
 .flexInfo {
   width: 50%;
   margin: 0 20px;
 
+
   @media (min-width: 600px) {
-  h2 {margin-top: 0;}
+    h2 {margin-top: 0;}
   }
 
   @media (max-width: 600px) {
@@ -120,18 +261,23 @@
 }
 
 .flex p span:first-child {
-  width: 80px; 
   text-align: left;
   margin-right: 10px;
 
   @media (max-width: 600px) {
-    width: 40px;
     margin-right: 10px;
   }
 }
 
 .centerTitle {
-  position: relative;
+  display: flex;
+  width: 50%;
+  text-align: center;
+
+  justify-content: center;
+  align-items: center;
+
+  h2 { width: 50%; }
 }
 
 .wrap-flexbox {

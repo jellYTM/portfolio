@@ -4,6 +4,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import * as AureliaData from "./Aurelia_sp..json"
 
+
 const generateSquare = (radius: number, x: number, y: number, z:number) => {
   const pts: THREE.Vector3[] = [];
   for (let i = 0; i < 4; i++) {
@@ -110,6 +111,7 @@ const otherPattern7 = createOtherPattern(patternConfigs)
 const otherPattern8 = createOtherPattern(patternConfigs)
 const otherPattern9 = createOtherPattern(patternConfigs)
 const otherPattern10 = createOtherPattern(patternConfigs)
+const otherPattern11 = createOtherPattern(patternConfigs)
 
 
 
@@ -184,7 +186,7 @@ if (window.innerWidth <= 600) {
 }
 
 const JellyfishScene = () => {
-  const [idx, setIdx] = useState(0);
+  var [idx, setIdx] = useState(0);
   const timer = useRef(0);
 
   const { camera } = useThree();
@@ -199,9 +201,9 @@ const JellyfishScene = () => {
     }
     
     theta += arg
-    let x = radius * Math.cos(theta / 2) * (1 + 0.3 * Math.sin(theta * 0.3))
+    let x = radius * Math.cos(theta / 2) * (1 - 0.3 * Math.sin(theta * 0.3))
     let y = Math.sin(theta)
-    let z = radius * Math.sin(theta / 2) * (1 + 0.3 * Math.sin(theta * 0.3))
+    let z = radius * Math.sin(theta / 2) * (1 - 0.3 * Math.sin(theta * 0.3))
 
     camera.position.set(x, y, z)
     camera.lookAt(0, 0, 0)
@@ -230,6 +232,7 @@ const JellyfishScene = () => {
       <Skeleton pattern={otherPattern8[(idx+16) % patterns.length]}/>
       <Skeleton pattern={otherPattern9[(idx+18) % patterns.length]}/>
       <Skeleton pattern={otherPattern10[(idx+20) % patterns.length]}/>
+      <Skeleton pattern={otherPattern11[(idx*2) % patterns.length]}/>
       <OrbitControls />
     </>
   );
@@ -240,10 +243,14 @@ const JellyfishScene = () => {
  */
 export default function JellyfishApp() {
     return (
-        <div id="JellyfishApp">
-        <Canvas>
-            <JellyfishScene />
-        </Canvas>
+        <div id="JellyfishApp-container">
+          <div id="JellyfishApp">
+            <Canvas>
+                <JellyfishScene />
+            </Canvas>
+          </div>
+          <div>
+          </div>
         </div>
     );
 }
