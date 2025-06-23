@@ -44,10 +44,13 @@
 
 #blueprint1 {
   position: absolute;
-  top: calc((100vh + 88px - 50vw) / 2);
+  top: 88px;
+  right: 0;
+  padding: 0 2.5vw;
+  margin-right: 5.0vw;
 
-  width: 50%;
-  height: auto;
+  height: calc((100vh - 88px) / 2);
+  width: auto;
   opacity: 0;
   z-index: -1;
 
@@ -64,11 +67,14 @@
 
 #blueprint2 {
   position: absolute;
-  top: calc((100vh + 88px - 50vw) / 2);
-  left: 50%;
+  top: calc((100vh - 88px) / 2 + 88px);
+  right: 0;
+  padding: 0 2.5vw;
+  margin-right: 5.0vw;
+  
 
-  width: 50%;
-  height: auto;
+  height: calc((100vh - 88px) / 2);
+  width: auto;
   opacity: 0;
   z-index: -1;
 
@@ -83,7 +89,13 @@
   }
 }
 
-@keyframes blueprint {
+#JellyfishInfo {
+  margin: 0 5vw;
+  position: absolute;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
   0% {
     z-index: 0;
     opacity: 0;
@@ -94,14 +106,22 @@
   }
 }
 
-#Title-wrapper:hover ~ .blueprint {
-  animation: blueprint 1s linear;
-  animation-fill-mode: forwards;
-}
+@media screen and (min-width: 1000px) {
+  #Title-wrapper:hover ~ .blueprint {
+    animation: fadeIn 1s linear;
+    animation-fill-mode: forwards;
+    background-color: rgba(37, 37, 72, 0.658);
+  }
 
-#Title-wrapper:hover h1{
-  opacity: 0;
-  transition: all 0.5s 0s ease;
+  #Title-wrapper:hover h1{
+    opacity: 0;
+    transition: all 0.5s 0s ease;
+  }
+
+  #Title-wrapper:hover ~ #JellyfishInfo{
+    animation: fadeIn 1s linear;
+    animation-fill-mode: forwards;
+  } 
 }
 
 #JellyfishApp-container #JellyfishApp {
@@ -133,6 +153,7 @@
   height: 100%;
   width: 100%;
 }
+
 
 .CenterDesign {
   text-align: center;

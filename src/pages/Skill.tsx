@@ -1,9 +1,11 @@
-import JellyfishApp from "./JellyfishAnimation.tsx"
+import {JellyfishApp} from "./JellyfishAnimation.tsx"
 import R from "../assets/r.png"
 import GAS from "../assets/google-apps-script.png"
 import Blogger from "../assets/blogger.png"
+import { useState } from "react";
 
 function Skill() {
+    const [idx, setIdx] = useState(0);
     return (
         <div className="wrapper"> 
             <div className='container'>
@@ -148,7 +150,7 @@ function Skill() {
                 </div>
             </div>
             <div className="JellyfishApp-background">
-                <JellyfishApp />
+                <JellyfishApp idx={idx} setIdx={setIdx}/>
             </div>
         </div>
     )

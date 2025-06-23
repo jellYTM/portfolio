@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import Me3 from '../assets/Me3.jpg'
 import Me4 from '../assets/Me4.jpg'
-import JellyfishApp from "./JellyfishAnimation.tsx"
+import {JellyfishApp} from "./JellyfishAnimation.tsx"
 
 function AboutMe() {
+    const [idx, setIdx] = useState(0);
     return (
         <div className='wrapper'> 
             <div className='container'>
@@ -45,7 +47,7 @@ function AboutMe() {
                 </div>
             </div>
             <div className="JellyfishApp-background">
-                <JellyfishApp />
+                <JellyfishApp idx={idx} setIdx={setIdx}/>
             </div>
         </div>
     )

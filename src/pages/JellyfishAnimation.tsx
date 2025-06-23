@@ -1,4 +1,4 @@
-import { useMemo, useState, useRef, useEffect } from "react";
+import { useMemo, useRef, useEffect } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
@@ -88,8 +88,8 @@ const coordinates: Coordinates = { x:0, y:0, z:0 };
 const patterns = patternConfigs.map(config => createPattern(config, coordinates));
 type Pattern = typeof patterns[number];
 
-const a = -12
-const b = 12
+const a = -15
+const b = 15
 
 
 const createOtherPattern = (patternConfigs: PatternConfig[]) => {
@@ -185,8 +185,12 @@ if (window.innerWidth <= 600) {
   radius = 12
 }
 
-const JellyfishScene = () => {
-  var [idx, setIdx] = useState(0);
+interface JellyfishSceneProps {
+    idx: number;
+    setIdx: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const JellyfishScene: React.FC<JellyfishSceneProps> = ({idx, setIdx}) => {
   const timer = useRef(0);
 
   const { camera } = useThree();
@@ -211,7 +215,7 @@ const JellyfishScene = () => {
 
   useEffect( () => {
     if (window.innerWidth <= 600) {
-      radius = 12
+      radius = 15
     } else {
       radius = 8
     }
@@ -223,7 +227,7 @@ const JellyfishScene = () => {
       <directionalLight position={[10, 10, 10]} />
       <Skeleton pattern={patterns[idx]}/>
       <Skeleton pattern={otherPattern1[(idx+2) % patterns.length]}/>
-      <Skeleton pattern={otherPattern2[(idx+4) % patterns.length]}/>
+      <Skeleton pattern={otherPattern2[(idx*2+4) % patterns.length]}/>
       <Skeleton pattern={otherPattern3[(idx+6) % patterns.length]}/>
       <Skeleton pattern={otherPattern4[(idx+8) % patterns.length]}/>
       <Skeleton pattern={otherPattern5[(idx+10) % patterns.length]}/>
@@ -241,16 +245,39 @@ const JellyfishScene = () => {
 /**
  * Top-level component with Canvas.
  */
-export default function JellyfishApp() {
+export function JellyfishApp({idx, setIdx}: JellyfishSceneProps) {
     return (
-        <div id="JellyfishApp-container">
-          <div id="JellyfishApp">
-            <Canvas>
-                <JellyfishScene />
-            </Canvas>
-          </div>
-          <div>
-          </div>
+        <div id="JellyfishApp">
+          <Canvas>
+              <JellyfishScene idx={idx} setIdx={setIdx} />
+          </Canvas>
         </div>
     );
+}
+
+export function JellyfishInfo({idx, setIdx}: JellyfishSceneProps) {
+  const frameID = patternConfigs[idx].frameID
+  const umbrella = patternConfigs[idx].umbrella
+  const oral_arm = patternConfigs[idx].oral_arm
+  const tentacle = patternConfigs[idx].tentacle
+  return (
+          <div id="JellyfishInfo">
+            <h3>FrameID：{frameID}</h3>
+            <div>
+              <p>umbrella</p>
+              <p>h0：{umbrella.h0}, h1：{umbrella.h1}, h2：{umbrella.h2}, h3：{umbrella.h3}, h4：{umbrella.h4}</p>
+              <p>r1：{umbrella.r1}, r2：{umbrella.r2}, r3：{umbrella.r3}, r4：{umbrella.r4}, r5：{umbrella.r5}</p>
+            </div>
+            <div>
+              <p>oral-arm</p>
+              <p>h0：{oral_arm.h0}, h1：{oral_arm.h1}, h2：{oral_arm.h2}, h3：{oral_arm.h3}, h4：{oral_arm.h4}, h5：{oral_arm.h5}, h6：{oral_arm.h6}</p>
+              <p>r1：{oral_arm.r1}, r2：{oral_arm.r2}, r3：{oral_arm.r3}, r4：{oral_arm.r4}, r5：{oral_arm.r5}, r6：{oral_arm.r6}</p>
+            </div>
+            <div>
+              <p>tentacle</p>
+              <p>h1：{tentacle.h1}, h2：{tentacle.h2}</p>
+              <p>r1：{tentacle.r1}, r2：{tentacle.r1}</p>
+            </div>
+          </div>
+  );
 }
