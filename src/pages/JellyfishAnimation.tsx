@@ -227,7 +227,7 @@ const JellyfishScene: React.FC<JellyfishSceneProps> = ({idx, setIdx}) => {
       <directionalLight position={[10, 10, 10]} />
       <Skeleton pattern={patterns[idx]}/>
       <Skeleton pattern={otherPattern1[(idx+2) % patterns.length]}/>
-      <Skeleton pattern={otherPattern2[(idx*2+4) % patterns.length]}/>
+      <Skeleton pattern={otherPattern2[(idx+4) % patterns.length]}/>
       <Skeleton pattern={otherPattern3[(idx+6) % patterns.length]}/>
       <Skeleton pattern={otherPattern4[(idx+8) % patterns.length]}/>
       <Skeleton pattern={otherPattern5[(idx+10) % patterns.length]}/>
@@ -255,7 +255,7 @@ export function JellyfishApp({idx, setIdx}: JellyfishSceneProps) {
     );
 }
 
-export function JellyfishInfo({idx, setIdx}: JellyfishSceneProps) {
+export function JellyfishInfo({idx}: JellyfishSceneProps) {
   const frameID = patternConfigs[idx].frameID
   const umbrella = patternConfigs[idx].umbrella
   const oral_arm = patternConfigs[idx].oral_arm
