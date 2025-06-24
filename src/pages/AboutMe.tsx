@@ -39,8 +39,7 @@ function AboutMe() {
                     <div className='flex-box'>
                         <div className='centerTitle'><h2>プログラミングとの出会い</h2></div>
                         <div className='flexInfo'>
-                            <p>割と昔から憧れはあり、
-                            </p>
+                            <p>割と昔から興味と憧れだけはあった。</p>
                             <p>高校生の頃、研究のためPythonを学習</p>
                             <p>そこから開発にのめりこむ</p>
                             <p>根性があればなんでも作れると思っている</p>

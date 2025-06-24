@@ -145,12 +145,12 @@ h2 {
 
 a {
   font-size: calc(1 / 170 * 100vw + 8.5px);
-  color: white;
+  color: rgb(184, 184, 184);
   text-decoration: inherit;
 }
 
 a:hover {
-  color: rgb(184, 184, 184);
+  color: rgb(119, 119, 119);
 }
 
 body {
