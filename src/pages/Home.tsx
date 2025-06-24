@@ -10,10 +10,9 @@ function Home() {
             <div id="bluebrint-container">
                 <div id="Title-wrapper">
                     <h1>My Portfolio</h1>
-                    <p className="pc">pls hover the mouse over</p>
-                    <p className="tablet">pls tap me</p>
-                    <p className="phone">you can see blueprint</p>
-                    <p className="phone">if you watch from PC or tablet</p>
+                    <p className="pc">Please hover the mouse over</p>
+                    <p className="tablet">Please tap Here</p>
+                    <p className="phone">I want you to watch from PC or tablet...</p>
                 </div>
                 <img className="blueprint" id="blueprint1" src={blueprint1}/>
                 <img className="blueprint" id="blueprint2" src={blueprint2}/>

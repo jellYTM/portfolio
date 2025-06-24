@@ -221,7 +221,8 @@
   margin: 0 auto;
 
   @media (max-width: 600px) {
-    display: block;
+    flex-direction: column;
+    
   }
 }
 
@@ -333,6 +334,11 @@
   align-items: center;
 
   h2 { width: 50%; }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    h2 { width: 100%; }
+  }
 }
 
 .wrap-flexbox {
