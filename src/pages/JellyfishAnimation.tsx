@@ -215,7 +215,7 @@ const JellyfishScene: React.FC<JellyfishSceneProps> = ({idx, setIdx}) => {
 
   useEffect( () => {
     if (window.innerWidth <= 600) {
-      radius = 15
+      radius = 13
     } else {
       radius = 8
     }
@@ -255,13 +255,13 @@ export function JellyfishApp({idx, setIdx}: JellyfishSceneProps) {
     );
 }
 
-export function JellyfishInfo({idx}: JellyfishSceneProps) {
+export function JellyfishPatternInfo({idx}: JellyfishSceneProps) {
   const frameID = patternConfigs[idx].frameID
   const umbrella = patternConfigs[idx].umbrella
   const oral_arm = patternConfigs[idx].oral_arm
   const tentacle = patternConfigs[idx].tentacle
   return (
-          <div id="JellyfishInfo">
+          <div id="JellyfishPatternInfo">
             <h3>FrameID：{frameID}</h3>
             <div>
               <p>umbrella</p>

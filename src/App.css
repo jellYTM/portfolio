@@ -9,6 +9,23 @@
   }
 }
 
+.pc {
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+}
+
+.tablet {
+  @media screen and ((max-width: 600px) or (min-width:1000px)) {
+    display: none;
+  }
+}
+
+.phone {
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+}
 #Home {
   display: flex;
 }
@@ -28,6 +45,7 @@
   z-index: 2;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -54,14 +72,13 @@
   opacity: 0;
   z-index: -1;
 
-  transition: all 0.1s 0s ease;
-
   @media screen and (max-width: 600px) {
     top: 58px;
-    left: calc(50vw - (100vh - 58px) / 2 / 2);
+    width: 100%;
+    height: auto;
 
-    height: calc((100vh - 58px) / 2);
-    width: auto;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -78,18 +95,17 @@
   opacity: 0;
   z-index: -1;
 
-  transition: all 0.1s 0s ease;
-
   @media screen and (max-width: 600px) {
-    top: calc((100vh - 58px) / 2 + 58px);
-    left: calc(50vw - (100vh - 58px) / 2 / 2);
-
-    height: calc((100vh - 58px) / 2);
-    width: auto;
+    top: calc((100vw - 58px) / 2 + 58px);
+    width: 100%;
+    height: auto;
+    
+    margin: 0;
+    padding: 0;
   }
 }
 
-#JellyfishInfo {
+#JellyfishPatternInfo {
   margin: 0 5vw;
   position: absolute;
   opacity: 0;
@@ -106,7 +122,15 @@
   }
 }
 
-@media screen and (min-width: 1000px) {
+#JellyfishInfo {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  margin: 0 5vw;
+
+}
+
+@media screen and (min-width: 600px) {
   #Title-wrapper:hover ~ .blueprint {
     animation: fadeIn 1s linear;
     animation-fill-mode: forwards;
@@ -115,13 +139,23 @@
 
   #Title-wrapper:hover h1{
     opacity: 0;
-    transition: all 0.5s 0s ease;
+    transition: all 1.0s 0s ease;
   }
 
-  #Title-wrapper:hover ~ #JellyfishInfo{
+  #Title-wrapper:hover p{
+    opacity: 0;
+    transition: all 1.0s 0s ease;
+  }
+
+  #Title-wrapper:hover ~ #JellyfishPatternInfo{
     animation: fadeIn 1s linear;
     animation-fill-mode: forwards;
   } 
+
+  #Title-wrapper:hover ~ #JellyfishInfo {
+    animation: fadeIn 1s linear;
+    animation-fill-mode: forwards;
+  }
 }
 
 #JellyfishApp-container #JellyfishApp {
