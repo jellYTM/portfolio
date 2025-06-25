@@ -197,6 +197,18 @@
   margin-left: 1%;
 }
 
+.left-title2 {
+  padding-top: 5vh;
+  margin-left: 6vw;
+}
+
+.first-flex-wrapper {
+   border-bottom: 1px dashed rgb(174, 174, 174);
+   padding: 5vh 0 10vh 0;
+   margin: 0 3vw;
+}
+
+
 .flex-wrapper {
    border-bottom: 1px dashed rgb(174, 174, 174);
    padding: 10vh 0;
@@ -239,12 +251,25 @@
 .flexbox-container {
   width: 23%;
   margin: 1%;
-  border-radius: 5%;
+  border-radius: 2%;
   background-color: rgba(104, 104, 104, 0.5);
 
   @media screen and (max-width: 600px) {
     width: 47%;
     margin: 1.5%
+  }
+}
+
+.flexbox-container2 {
+  width: 23vw;
+  height: 23vw;
+  margin: 1vw;
+  background-color: rgba(104, 104, 104, 0.5);
+
+  @media screen and (max-width: 600px) {
+    width: 47vw;
+    height: 47vw;
+    margin: 1.5vw;
   }
 }
 
@@ -262,6 +287,20 @@
   margin: 2.5vw 10%;
 }
 
+.flexbox-container-image3 {
+  position: absolute;
+
+  height : 23vw;
+  width: 23vw;
+
+  object-fit: cover;
+
+  @media screen and (max-width: 600px) {
+    height : 47vw;
+    width: 47vw;
+  }
+}
+
 .flexbox-container-info {
   width: 80%;
   margin: 0 10% 2.5vw;
@@ -269,8 +308,44 @@
   a {color: rgb(134, 134, 134);}
   a:hover {color: rgb(184, 184, 184)}
 
-  h2 {font-size: 1.5em;}
+  h2 {
+    font-size: 1.5rem;
+    @media screen and (max-width: 360px) { 
+    font-size: 1.0rem;
+    }
+  }
 }
+
+.flexbox-container-info2 {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: rgba(26, 29, 29, 0.432);
+  opacity: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s 0s ease;
+
+  a {color: rgb(134, 134, 134);}
+  a:hover {color: rgb(184, 184, 184)}
+
+  h2 {
+    font-size: 1.5rem;
+    @media screen and (max-width: 360px) { 
+    font-size: 1.0rem;
+    }
+  }
+}
+
+.flexbox-container-info2:hover {
+  opacity: 1;
+  transition: all 0.3s 0s ease; 
+} 
 
 .flexImg {
   position: relative;

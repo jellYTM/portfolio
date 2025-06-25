@@ -3,6 +3,7 @@ import JellyfishTrackingSystem from "../assets/JellyfishTrackingSystem.gif"
 import NewsR from "../assets/NewsR.png"
 import icon from "../assets/icon.png"
 import AlbumTemplate from "../assets/AlbumTemplate.png"
+import CAC from "../assets/CoyoteAICompetition.png"
 import { useState } from "react"
 
 function Products() {
@@ -10,8 +11,8 @@ function Products() {
     return (
         <div className='wrapper'> 
             <div className='container'>
-                <h2 className="left-title">主要な開発物</h2>
-                <div className='flex-wrapper'>
+                <h2 className="left-title2">主要な開発物</h2>
+                <div className='first-flex-wrapper'>
                     <div className="flexbox">
                         <div className="flexImg2">
                             <img src={JellyfishTrackingSystem} />
@@ -58,7 +59,7 @@ function Products() {
                         </div>
                     </div>
                 </div>
-                <h2 className="left-title">その他の開発物</h2>
+                <h2 className="left-title2">その他の開発物</h2>
                 <div className="flexbox-list-wrapper">
                     <div className="flexbox-list">
                         <div className="flexbox-container">
@@ -73,7 +74,7 @@ function Products() {
                             </div>
                         </div>
                         <div className="flexbox-container">
-                            <img className="flexbox-container-image2" src={AlbumTemplate} />
+                            <img className="flexbox-container-image2" src={CAC} />
                             <div className="flexbox-container-info">
                                 <h2>Coyote AI Competition</h2>
                                 <p>Coyoteというカードゲームで戦わせるAIを作りました。</p>
