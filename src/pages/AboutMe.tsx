@@ -9,7 +9,7 @@ function AboutMe() {
         <div className='wrapper'> 
             <div className='container'>
                 <div className='flex-wrapper'>
-                    <div className="flex-box">
+                    <div className="flexbox">
                         <div className="flexImg">
                             <img src={Me3} />
                             <img src={Me4} className='cover-img'/>
@@ -25,8 +25,8 @@ function AboutMe() {
                     </div>
                 </div>
                 <div className='flex-wrapper'>
-                    <div className='flex-box'>
-                        <div className='centerTitle'><h2>クラゲと僕</h2></div>
+                    <div className='flexbox'>
+                        <div className='centerTitle'><h2>海月との歩み</h2></div>
                         <div className='flexInfo'>
                             <p>小学生の頃、母親に買ってもらった危険生物の図鑑でクラゲに興味を持つ</p>
                             <p>中学ではいつの間にかアイデンティティへ</p>
@@ -36,7 +36,7 @@ function AboutMe() {
                     </div>
                 </div>
                 <div className='last-flex-wrapper'>
-                    <div className='flex-box'>
+                    <div className='flexbox'>
                         <div className='centerTitle'><h2>プログラミングとの出会い</h2></div>
                         <div className='flexInfo'>
                             <p>割と昔から興味と憧れだけはあった。</p>

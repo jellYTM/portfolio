@@ -121,7 +121,7 @@ p {
   }
 
   @media screen and (max-width: 360px) {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
@@ -129,7 +129,7 @@ h2 {
   font-size: calc(4 / 170 * 100vw + 9.9px);
 
   @media screen and (max-width: 360px) { 
-    font-size: 12px
+    font-size: 18px
   }
 }
 

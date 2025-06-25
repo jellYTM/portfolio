@@ -1,6 +1,8 @@
 import { JellyfishApp } from "./JellyfishAnimation"
 import JellyfishTrackingSystem from "../assets/JellyfishTrackingSystem.gif"
 import NewsR from "../assets/NewsR.png"
+import icon from "../assets/icon.png"
+import AlbumTemplate from "../assets/AlbumTemplate.png"
 import { useState } from "react"
 
 function Products() {
@@ -8,8 +10,9 @@ function Products() {
     return (
         <div className='wrapper'> 
             <div className='container'>
+                <h2 className="left-title">主要な開発物</h2>
                 <div className='flex-wrapper'>
-                    <div className="flex-box">
+                    <div className="flexbox">
                         <div className="flexImg2">
                             <img src={JellyfishTrackingSystem} />
                         </div>
@@ -25,7 +28,7 @@ function Products() {
                     </div>
                 </div>
                 <div className='flex-wrapper'>
-                    <div className='flex-box'>
+                    <div className='flexbox'>
                         <div className="flexImg3">
                             <img src={NewsR} />
                         </div>
@@ -40,14 +43,46 @@ function Products() {
                         </div>
                     </div>
                 </div>
-                <div className='last-flex-wrapper'>
-                    <div className='flex-box'>
-                        <div className='centerTitle'><h2>プログラミングとの出会い</h2></div>
+                <div className='flex-wrapper'>
+                    <div className='flexbox'>
+                        <div className="flexImg3">
+                            <img src={icon} />
+                        </div>
                         <div className='flexInfo'>
-                            <p>割と昔から興味と憧れだけはあった。</p>
-                            <p>高校生の頃、研究のためPythonを学習</p>
-                            <p>そこから開発にのめりこむ</p>
-                            <p>根性があればなんでも作れると思っている</p>
+                            <h2>Portfolio</h2>
+                            <p>このポートフォリオです。</p>
+                            <p>クラゲのアニメーションはThree.jsで生成しています。</p>
+                            <p>動画のフレーム20枚から27個のプロパティを定規で測ってデータを作成しています。</p>
+                            <p>いづれクラゲのアニメの種類を増やすときは骨格推定から楽にやりたいです。</p>
+                            <a href="https://github.com/jellYTM/portfolio/projects">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <h2 className="left-title">その他の開発物</h2>
+                <div className="flexbox-list-wrapper">
+                    <div className="flexbox-list">
+                        <div className="flexbox-container">
+                            <img className="flexbox-container-image2" src={AlbumTemplate} />
+                            <div className="flexbox-container-info">
+                                <h2>Album Template</h2>
+                                <p>GASで作ったWebページのテンプレートです。</p>
+                                <p>GASにしては頑張ったと思います。</p>
+                                <p>浪人期に作りました。</p>
+                                <p><a href="https://script.google.com/macros/s/AKfycbzwn5L51WfwNO1fiMQqFwQ_OMPVRka29A8Nqjnyv20nPIoPMj8B05qLvxUmGoFFd5Ys/exec">Template Link</a></p>
+                                <p><a href="https://github.com/jellYTM/Album_Template1">Source Code</a></p>
+                            </div>
+                        </div>
+                        <div className="flexbox-container">
+                            <img className="flexbox-container-image2" src={AlbumTemplate} />
+                            <div className="flexbox-container-info">
+                                <h2>Coyote AI Competition</h2>
+                                <p>Coyoteというカードゲームで戦わせるAIを作りました。</p>
+                                <p>初めてのベイズ推定を使った実装です。</p>
+                                <p>残りカードの情報から合計値の事前分布を作り、コヨーテ宣言をしていない事実を事後分布として扱いました。
+                                    （実際は事後確率を正規化定数、条件付き確率を階段関数として計算しています。）</p>
+                                <p>スポンサー賞でKateSawada賞をいただきました。</p>
+                                <p><a href="https://github.com/coyote-AI-competition/resource">Source Code</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
