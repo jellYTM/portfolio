@@ -88,33 +88,31 @@ const coordinates: Coordinates = { x:0, y:0, z:0 };
 const patterns = patternConfigs.map(config => createPattern(config, coordinates));
 type Pattern = typeof patterns[number];
 
-const a = -15
-const b = 15
 
+const createOtherPattern = (patternConfigs: PatternConfig[], height: number) => {
+  const a = -15
+  const b = 15
 
-const createOtherPattern = (patternConfigs: PatternConfig[]) => {
   let x = Math.floor(Math.random() * (b + 1 - a)) + a
-  let y = Math.floor(Math.random() * (b + 1 - a)) + a
+  let y = Math.floor(Math.random() * (height + 1 - (-height)) + (-height))
   let z = Math.floor(Math.random() * (b + 1 - a)) + a
   const otherPattern = patternConfigs.map(config => createPattern(config, {x:x, y:y, z:z}));
 
   return otherPattern
 }
-  
-const otherPattern1 = createOtherPattern(patternConfigs)
-const otherPattern2 = createOtherPattern(patternConfigs)
-const otherPattern3 = createOtherPattern(patternConfigs)
-const otherPattern4 = createOtherPattern(patternConfigs)
-const otherPattern5 = createOtherPattern(patternConfigs)
-const otherPattern6 = createOtherPattern(patternConfigs)
-const otherPattern7 = createOtherPattern(patternConfigs)
-const otherPattern8 = createOtherPattern(patternConfigs)
-const otherPattern9 = createOtherPattern(patternConfigs)
-const otherPattern10 = createOtherPattern(patternConfigs)
-const otherPattern11 = createOtherPattern(patternConfigs)
 
-
-
+const height =  document.documentElement.scrollHeight * 15 / 631
+const otherPattern1 = createOtherPattern(patternConfigs, height)
+const otherPattern2 = createOtherPattern(patternConfigs, height)
+const otherPattern3 = createOtherPattern(patternConfigs, height)
+const otherPattern4 = createOtherPattern(patternConfigs, height)
+const otherPattern5 = createOtherPattern(patternConfigs, height)
+const otherPattern6 = createOtherPattern(patternConfigs, height)
+const otherPattern7 = createOtherPattern(patternConfigs, height)
+const otherPattern8 = createOtherPattern(patternConfigs, height)
+const otherPattern9 = createOtherPattern(patternConfigs, height)
+const otherPattern10 = createOtherPattern(patternConfigs, height)
+const otherPattern11 = createOtherPattern(patternConfigs, height)
 
 const Skeleton = ({ pattern }: { pattern: Pattern }) => {
 
@@ -214,12 +212,8 @@ const JellyfishScene: React.FC<JellyfishSceneProps> = ({idx, setIdx}) => {
   });
 
   useEffect( () => {
-    if (window.innerWidth <= 600) {
-      radius = 13
-    } else {
-      radius = 8
-    }
-  })
+    radius = document.documentElement.scrollHeight * 8 / 631
+  }, [window.innerWidth])
 
   return (
     <>
