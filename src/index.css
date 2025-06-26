@@ -102,6 +102,10 @@ nav ul img:hover {
   }
 }
 
+#footer-info {
+  width: 50%;
+}
+
 #footer ul {
   width: 100%;
   display: flex;
