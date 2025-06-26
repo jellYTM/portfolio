@@ -74,7 +74,7 @@
 
   @media screen and (max-width: 600px) {
     top: 58px;
-    width: 100%;
+    width: 0;
     height: auto;
 
     margin: 0;
@@ -97,7 +97,7 @@
 
   @media screen and (max-width: 600px) {
     top: calc((100vw - 58px) / 2 + 58px);
-    width: 100%;
+    width: 0;
     height: auto;
     
     margin: 0;

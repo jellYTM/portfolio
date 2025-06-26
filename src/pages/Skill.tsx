@@ -1,7 +1,7 @@
 import {JellyfishApp} from "./JellyfishAnimation.tsx"
-import R from "../assets/r.png"
-import GAS from "../assets/google-apps-script.png"
-import Blogger from "../assets/blogger.png"
+import R from "/r.png"
+import GAS from "/google-apps-script.png"
+import Blogger from "/blogger.png"
 import { useState } from "react";
 
 function Skill() {

@@ -1,9 +1,9 @@
 import { JellyfishApp } from "./JellyfishAnimation"
-import JellyfishTrackingSystem from "../assets/JellyfishTrackingSystem.gif"
-import NewsR from "../assets/NewsR.png"
-import icon from "../assets/icon.png"
-import AlbumTemplate from "../assets/AlbumTemplate.png"
-import CAC from "../assets/CoyoteAICompetition.png"
+import JellyfishTrackingSystem from "/JellyfishTrackingSystem.gif"
+import NewsR from "/NewsR.png"
+import icon from "/icon.png"
+import AlbumTemplate from "/AlbumTemplate.png"
+import CAC from "/CoyoteAICompetition.png"
 import { useState } from "react"
 
 function Products() {
@@ -55,7 +55,7 @@ function Products() {
                             <p>クラゲのアニメーションはThree.jsで生成しています。</p>
                             <p>動画のフレーム20枚から27個のプロパティを定規で測ってデータを作成しています。</p>
                             <p>いづれクラゲのアニメの種類を増やすときは骨格推定から楽にやりたいです。</p>
-                            <a href="https://github.com/jellYTM/portfolio/projects">Source Code</a>
+                            <a href="https://github.com/jellYTM/portfolio">Source Code</a>
                         </div>
                     </div>
                 </div>

@@ -90,27 +90,81 @@ nav ul img:hover {
   padding: 2px;
 }
 
+#footer {
+  height: 88px;
+  display: flex;
+  list-style-type: none;
+  background-color: #232b2b;
+  padding: 0;
+
+  @media (max-width: 600px) {
+    height: 58px;
+  }
+}
+
+#footer ul {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 0;
+  padding: 0;
+  
+}
+
+#footer ul li a {
+  height: 88px;
+  width: 88px;
+  position: absolute;
+  list-style: none;
+
+  @media (max-width: 600px) {
+    height: 58px;
+    width: 58px;
+  }
+}
+
+#footer ul li {
+  height: 88px;
+  width: 88px;
+  list-style: none;
+
+  @media (max-width: 600px) {
+    width: 58px;
+    height: 58px;
+  }
+}
+
+#footer ul li img {
+  height: 32px;
+  width: auto;
+  margin: 25px;
+  
+  transition: all 0.5s 0s ease;
+
+  @media (max-width: 600px) {
+    height: 20px;
+    margin: 15px;
+  }
+}
+
+#footer ul li a:hover ~ img {
+  list-style: none;
+  display: block;
+
+  height: 40px;
+  margin: 20px;
+  
+  @media (max-width: 600px) {
+    height: 30px;
+    margin: 10px;
+  }
+}
+
 .Link {
   display: block;
   text-decoration: none;
   color: white;
-}
-
-#footer {
-  width: 100%;
-  background-color: #232b2b;
-  ul {list-style-type: none;}
-  padding: 16px 0 16px;
-
-  z-index: 1;
-  
-  @media (max-width: 600px) {
-    li {font-size: 12px;}
-  }
-}
-
-#footer h3 {
-  margin: 16px 16px 0;
 }
 
 p {

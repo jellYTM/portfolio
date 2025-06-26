@@ -1,6 +1,6 @@
 import {JellyfishApp, JellyfishPatternInfo} from "./JellyfishAnimation.tsx"
-import blueprint1 from "../assets/Aurelia.sp Bone - blueprint 1 umbrella_20250615210700.png"
-import blueprint2 from "../assets/Aurelia.sp Bone - blueprint 1 oral,tent_20250615210553.png"
+import blueprint1 from "/Aurelia.sp Bone - blueprint 1 umbrella_20250615210700.png"
+import blueprint2 from "/Aurelia.sp Bone - blueprint 1 oral,tent_20250615210553.png"
 import { useState } from "react"
 
 function Home() {

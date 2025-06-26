@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { JellyfishApp } from "./JellyfishAnimation"
-import JellyfishTrackingSystem from "../assets/JellyfishTrackingSystem.gif"
+import JellyfishTrackingSystem from "/JellyfishTrackingSystem.gif"
 
 function Research() {
     const [idx, setIdx] = useState(0);

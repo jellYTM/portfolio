@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Me3 from '../assets/Me3.jpg'
-import Me4 from '../assets/Me4.jpg'
+import Me3 from '/Me3.jpg'
+import Me4 from '/Me4.jpg'
 import {JellyfishApp} from "./JellyfishAnimation.tsx"
 
 function AboutMe() {
