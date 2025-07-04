@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { JellyfishApp } from "./JellyfishAnimation"
-import Hydrocoryne_miurensis from "/Jellyfish/Hydrocoryne_miurensis.jpg"
 import Cludonema_pacificum from "/Jellyfish/Cludonema_pacificum.jpg"
 
 function MyJellyfish() {
@@ -11,7 +10,7 @@ function MyJellyfish() {
                 <div>
                     <div className="flexbox-list">
                         <div className="flexbox-container2">
-                            <img className="flexbox-container-image3" src={Hydrocoryne_miurensis}/>
+                            <img className="flexbox-container-image3" src="/Jellyfish/Hydrocoryne_miurensis.jpg"/>
                             <div className="flexbox-container-info2">
                                 <p>オオタマウミヒドラ<br/>Hydrocoryne <span>miurensis</span></p>
                             </div>

@@ -1,0 +1,127 @@
+{
+    "刺胞動物門": {
+        "鉢虫綱": {
+            "旗口クラゲ目": [
+                {
+                    "和名": "ミズクラゲ",
+                    "Genus": "Aurelia",
+                    "Species": "sp."
+                },
+                {
+                    "和名": "ミズクラゲ（ポリプ）",
+                    "Genus": "Aurelia",
+                    "Species": "sp."
+                },
+                {
+                    "和名": "ミズクラゲ（エフィラ）",
+                    "Genus": "Aurelia",
+                    "Species": "sp."
+                },
+                {
+                    "和名": "ミズクラゲ（幼体）",
+                    "Genus": "Aurelia",
+                    "Species": "sp."
+                },
+                {
+                    "和名": "アカクラゲ",
+                    "Genus": "Chrysaora",
+                    "Species": "Pacifica"
+                },
+                {
+                    "和名": "アカクラゲ(幼体)",
+                    "Genus": "Chrysaora",
+                    "Species": "Pacifica"
+                }
+            ], 
+            "根口クラゲ目": [
+                {
+                    "和名": "根口クラゲの1種",
+                    "Genus": "Rhizostomeae",
+                    "Species": ""   
+                }
+            ]
+        },
+
+        "ヒドロ虫綱": {
+            "花クラゲ目": [
+                {
+                    "和名": "オオタマウミヒドラ",
+                    "Genus": "Hydrocoryne",
+                    "Species": "miurensis"   
+                },
+                {
+                    "和名": "ドフラインクラゲ",
+                    "Genus": "Nemopsis",
+                    "Species": "Dofleini"   
+                },
+                {
+                    "和名": "エダアシクラゲ",
+                    "Genus": "Cludonema",
+                    "Species": "pacificum"   
+                },
+                {
+                "和名": "カタアシクラゲモドキ",
+                "Genus": "",
+                "Species": ""   
+                }
+            ],
+            
+            "軟クラゲ目": [
+                {
+                "和名": "スギウラヤクチクラゲ",
+                "Genus": "",
+                "Species": ""   
+                }
+            ],
+
+            "柔クラゲ目": [
+                {
+                    "和名": "オワンクラゲ",
+                    "Genus": "",
+                    "Species": ""   
+                }
+            ],
+
+            "硬クラゲ目": [
+                {
+                    "和名": "カラカサクラゲ",
+                    "Genus": "",
+                    "Species": ""   
+                },
+                {
+                    "和名": "オオカラカサクラゲ",
+                    "Genus": "",
+                    "Species": ""   
+                }
+            ],
+
+            "剛クラゲ目": [
+                {
+                "和名": "ニチリンクラゲ",
+                "Genus": "",
+                "Species": ""   
+                },
+                {
+                "和名": "ヤジロベエクラゲ",
+                "Genus": "",
+                "Species": ""   
+                }
+            ],
+            
+            "管クラゲ目": [
+                {
+                "和名": "ヒトツクラゲ",
+                "Genus": "",
+                "Species": ""   
+                },
+                {
+                "和名": "タマゴフタツクラゲモドキ",
+                "Genus": "",
+                "Species": ""   
+                }
+            ]
+
+            
+        }
+    }
+}

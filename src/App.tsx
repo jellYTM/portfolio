@@ -8,23 +8,27 @@ import Products from './pages/Products.tsx'
 import MyJellyfish from './pages/MyJellyfish.tsx'
 import Research from './pages/Research.tsx'
 import Footer from './pages/Footer.tsx'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className='content'>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/AboutMe' element={<AboutMe />} />
-          <Route path='/Skill' element={<Skill />} />
-          <Route path='/Products' element={<Products />} />
-          <Route path='/MyJellyfish' element={<MyJellyfish />} />
-          <Route path='/Research' element={<Research />} />
-        </Routes>
-      </div>
-      <Footer />
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <div className='content'>
+          <Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/AboutMe' element={<AboutMe />} />
+            <Route path='/Skill' element={<Skill />} />
+            <Route path='/Products' element={<Products />} />
+            <Route path='/MyJellyfish' element={<MyJellyfish />} />
+            <Route path='/Research' element={<Research />} />
+          </Routes>
+        </div>
+        <Footer />
+      </BrowserRouter>
+      <Analytics />
+    </>
   )
 }
 
