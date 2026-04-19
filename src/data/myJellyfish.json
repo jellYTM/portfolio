@@ -1,0 +1,38 @@
+{
+  "ja": [
+    {
+      "id": "jf-hydrocoryne",
+      "nameJp": "オオタマウミヒドラ",
+      "nameSciFront": "Hydrocoryne",
+      "nameSciBack": "miurensis",
+      "imageUrl": "/Jellyfish/Hydrocoryne_miurensis.jpg",
+      "altText": "オオタマウミヒドラ"
+    },
+    {
+      "id": "jf-cludonema",
+      "nameJp": "エダアシクラゲ",
+      "nameSciFront": "Cludonema",
+      "nameSciBack": "pacificum",
+      "imageUrl": "/Jellyfish/Cludonema_pacificum.jpg",
+      "altText": "エダアシクラゲ"
+    }
+  ],
+  "en": [
+    {
+      "id": "jf-hydrocoryne",
+      "nameJp": "Hydrocoryne miurensis",
+      "nameSciFront": "Hydrocoryne",
+      "nameSciBack": "miurensis",
+      "imageUrl": "/Jellyfish/Hydrocoryne_miurensis.jpg",
+      "altText": "Hydrocoryne miurensis"
+    },
+    {
+      "id": "jf-cludonema",
+      "nameJp": "Cludonema pacificum",
+      "nameSciFront": "Cludonema",
+      "nameSciBack": "pacificum",
+      "imageUrl": "/Jellyfish/Cludonema_pacificum.jpg",
+      "altText": "Cludonema pacificum"
+    }
+  ]
+}

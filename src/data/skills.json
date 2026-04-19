@@ -1,0 +1,400 @@
+{
+  "ja": {
+    "categories": [
+      {
+        "categoryName": "Language",
+        "items": [
+          {
+            "id": "lang-python",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+            "altText": "Python",
+            "descriptions": [
+              "初めて触ったプログラミング言語（VBAを除く）",
+              "主に画像トラッキングやAIの開発に使用",
+              "研究は大体こいつ"
+            ]
+          },
+          {
+            "id": "lang-r",
+            "imageUrl": "/r.png",
+            "altText": "R",
+            "descriptions": [
+              "グラフの作成で少し使用",
+              "最近は大体Python"
+            ],
+            "creditLink": "https://www.flaticon.com/free-icons/r",
+            "creditTitle": "r icons",
+            "creditText": "R icons created by Becris - Flaticon"
+          },
+          {
+            "id": "lang-html",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+            "altText": "HTML5",
+            "descriptions": [
+              "高３の時に憧れで勉強しました。",
+              "最近はtsx"
+            ]
+          },
+          {
+            "id": "lang-css",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+            "altText": "CSS3",
+            "descriptions": [
+              "htmlと一緒に勉強",
+              "そろそろTailwind CSSとやらも触ってみたい"
+            ]
+          },
+          {
+            "id": "lang-js",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+            "altText": "JavaScript",
+            "descriptions": [
+              "js自身で書いたことはほぼ皆無",
+              "大体GASかtsで",
+              "paizaのコーディングチェックで使ったくらい"
+            ]
+          },
+          {
+            "id": "lang-ts",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+            "altText": "TypeScript",
+            "descriptions": [
+              "サークルの先輩に教えていただいた",
+              "なんやかんや使いやすい"
+            ]
+          },
+          {
+            "id": "lang-gas",
+            "imageUrl": "/google-apps-script.png",
+            "altText": "Google Apps Script",
+            "descriptions": [
+              "Pythonの次に触った言語",
+              "Google大好きな私に最適性",
+              "この言語でWebアプリを初めて作成"
+            ],
+            "creditLink": "https://www.flaticon.com/free-icons/google-apps-script",
+            "creditTitle": "google apps script icons",
+            "creditText": "Google apps script icons created by Freepik - Flaticon"
+          },
+          {
+            "id": "lang-csharp",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+            "altText": "C#",
+            "descriptions": [
+              "Unityで使用",
+              "あんまり開発経験はないです"
+            ]
+          }
+        ]
+      },
+      {
+        "categoryName": "Framework",
+        "items": [
+          {
+            "id": "fw-react",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+            "altText": "React",
+            "descriptions": [
+              "tsと一緒に先輩に教えていただきました",
+              "抵抗はあったけど、フック使いやすい"
+            ]
+          },
+          {
+            "id": "fw-node",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+            "altText": "Node.js",
+            "descriptions": [
+              "typescriptの開発でお世話になってます。"
+            ]
+          }
+        ]
+      },
+      {
+        "categoryName": "Platform",
+        "items": [
+          {
+            "id": "pf-github",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+            "altText": "GitHub",
+            "descriptions": [
+              "言わずもがな使ってます",
+              "高校の時の自分に教えてあげたい"
+            ]
+          },
+          {
+            "id": "pf-vercel",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
+            "altText": "Vercel",
+            "descriptions": [
+              "tsとreactと一緒に先輩にご教授いただいた",
+              "脱GASの要因"
+            ]
+          },
+          {
+            "id": "pf-blogger",
+            "imageUrl": "/blogger.png",
+            "altText": "Blogger",
+            "descriptions": [
+              "html,cssの勉強で一瞬使いました",
+              "使いにくかったです"
+            ],
+            "creditLink": "https://www.flaticon.com/free-icons/blogger",
+            "creditTitle": "blogger icons",
+            "creditText": "Blogger icons created by riajulislam - Flaticon"
+          }
+        ]
+      },
+      {
+        "categoryName": "Software",
+        "items": [
+          {
+            "id": "sw-git",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+            "altText": "Git",
+            "descriptions": [
+              "最初飲み込むのに苦労しました",
+              "できるだけCLIで使うようにしています"
+            ]
+          },
+          {
+            "id": "sw-vscode",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
+            "altText": "VS Code",
+            "descriptions": [
+              "開発でほとんど使っています",
+              "これ無しでコーディングはしたくない"
+            ]
+          },
+          {
+            "id": "sw-blender",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg",
+            "altText": "Blender",
+            "descriptions": [
+              "すこし勉強しました",
+              "基本的なものは作れます"
+            ]
+          },
+          {
+            "id": "sw-unity",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg",
+            "altText": "Unity",
+            "descriptions": [
+              "サークルの開発で2Dマリオライクなものを作りました"
+            ]
+          }
+        ]
+      }
+    ],
+    "footers": [
+      {
+        "text": "Icons by ",
+        "link": "https://devicon.dev/",
+        "linkText": "Devicon"
+      },
+      {
+        "text": "Icons by ",
+        "link": "https://www.flaticon.com/",
+        "linkText": "Flaticon"
+      }
+    ]
+  },
+  "en": {
+    "categories": [
+      {
+        "categoryName": "Language",
+        "items": [
+          {
+            "id": "lang-python",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+            "altText": "Python",
+            "descriptions": [
+              "The very first programming language I learned (excluding VBA).",
+              "Mainly used for image tracking and AI development.",
+              "I use it for almost all my research."
+            ]
+          },
+          {
+            "id": "lang-r",
+            "imageUrl": "/r.png",
+            "altText": "R",
+            "descriptions": [
+              "Used briefly for graph creation.",
+              "Nowadays I mostly just use Python."
+            ],
+            "creditLink": "https://www.flaticon.com/free-icons/r",
+            "creditTitle": "r icons",
+            "creditText": "R icons created by Becris - Flaticon"
+          },
+          {
+            "id": "lang-html",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+            "altText": "HTML5",
+            "descriptions": [
+              "Learned out of admiration during my 3rd year of high school.",
+              "Recently I use mostly tsx."
+            ]
+          },
+          {
+            "id": "lang-css",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+            "altText": "CSS3",
+            "descriptions": [
+              "Studied together with HTML.",
+              "I would like to try out Tailwind CSS soon."
+            ]
+          },
+          {
+            "id": "lang-js",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+            "altText": "JavaScript",
+            "descriptions": [
+              "Rarely write pure JS by itself.",
+              "Usually write GAS or TypeScript.",
+              "Only used for coding checks on paiza."
+            ]
+          },
+          {
+            "id": "lang-ts",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+            "altText": "TypeScript",
+            "descriptions": [
+              "Taught by a senior in my club circle.",
+              "It's just so easy to use."
+            ]
+          },
+          {
+            "id": "lang-gas",
+            "imageUrl": "/google-apps-script.png",
+            "altText": "Google Apps Script",
+            "descriptions": [
+              "My second language after Python.",
+              "Perfect for me, a Google fanboy.",
+              "Created my very first Web app with this."
+            ],
+            "creditLink": "https://www.flaticon.com/free-icons/google-apps-script",
+            "creditTitle": "google apps script icons",
+            "creditText": "Google apps script icons created by Freepik - Flaticon"
+          },
+          {
+            "id": "lang-csharp",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+            "altText": "C#",
+            "descriptions": [
+              "Used inside Unity.",
+              "I don't have much development experience here."
+            ]
+          }
+        ]
+      },
+      {
+        "categoryName": "Framework",
+        "items": [
+          {
+            "id": "fw-react",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+            "altText": "React",
+            "descriptions": [
+              "Taught by my senior along with TS.",
+              "I felt some resistance at first, but hooks are great."
+            ]
+          },
+          {
+            "id": "fw-node",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+            "altText": "Node.js",
+            "descriptions": [
+              "Relied heavily on this for TypeScript development."
+            ]
+          }
+        ]
+      },
+      {
+        "categoryName": "Platform",
+        "items": [
+          {
+            "id": "pf-github",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+            "altText": "GitHub",
+            "descriptions": [
+              "Needless to say, I use it.",
+              "I want to teach this to my high school self."
+            ]
+          },
+          {
+            "id": "pf-vercel",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
+            "altText": "Vercel",
+            "descriptions": [
+              "Learned alongside TS and React from a senior.",
+              "The main reason I graduated from GAS."
+            ]
+          },
+          {
+            "id": "pf-blogger",
+            "imageUrl": "/blogger.png",
+            "altText": "Blogger",
+            "descriptions": [
+              "Used briefly while studying HTML/CSS.",
+              "Found it quite hard to formulate."
+            ],
+            "creditLink": "https://www.flaticon.com/free-icons/blogger",
+            "creditTitle": "blogger icons",
+            "creditText": "Blogger icons created by riajulislam - Flaticon"
+          }
+        ]
+      },
+      {
+        "categoryName": "Software",
+        "items": [
+          {
+            "id": "sw-git",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+            "altText": "Git",
+            "descriptions": [
+              "Struggled to understand it initially.",
+              "Trying to use the CLI as much as possible."
+            ]
+          },
+          {
+            "id": "sw-vscode",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
+            "altText": "VS Code",
+            "descriptions": [
+              "My primary IDE.",
+              "I don't even want to code without it."
+            ]
+          },
+          {
+            "id": "sw-blender",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg",
+            "altText": "Blender",
+            "descriptions": [
+              "Studied a little bit.",
+              "Can create basic models."
+            ]
+          },
+          {
+            "id": "sw-unity",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg",
+            "altText": "Unity",
+            "descriptions": [
+              "Created a 2D Mario-like game for the club."
+            ]
+          }
+        ]
+      }
+    ],
+    "footers": [
+      {
+        "text": "Icons by ",
+        "link": "https://devicon.dev/",
+        "linkText": "Devicon"
+      },
+      {
+        "text": "Icons by ",
+        "link": "https://www.flaticon.com/",
+        "linkText": "Flaticon"
+      }
+    ]
+  }
+}

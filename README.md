@@ -1,54 +1,24 @@
-# React + TypeScript + Vite
+# jellYTM Portfolio 🪼
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+個人的なポートフォリオサイトのソースコードです。
+React + TypeScript + Vite で構築されており、背景にはThree.jsを用いたオリジナルデータのクラゲアニメーションが動いています。
 
-Currently, two official plugins are available:
+## 🌐 ポートフォリオはこちらのリンクから
+**[https://mj-kun-portfolio.vercel.app/](https://mj-kun-portfolio.vercel.app/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ 特徴
+- **Three.js アニメーション**: ビデオフレームの計測データに基づき構築された、リアリティのあるミズクラゲの拍動アニメーション。
+- **完全な多言語対応 (🇬🇧/🇯🇵)**: すべてのページ（About me, スキル, 開発物, クラゲ図鑑, 研究, フッター等）が英語と日本語に完全対応。
+- **データ駆動アーキテクチャ**: すべてのテキスト、画像パス、SNSリンクなどは `src/data/*.json` ファイルで管理されており、ソースコードを触らずにコンテンツを修正・追加できます。
+- **レスポンシブデザイン**: スマートフォン、タブレット、PCに対応し、デバイスに応じて最適なレイアウト（固定ヘッダー・フローティングボタン・アコーディオンなど）を提供します。
 
-## Expanding the ESLint configuration
+## 🛠️ 技術スタック
+- **Core**: React, TypeScript, Vite
+- **Routing**: react-router-dom
+- **Animation/3D**: Three.js
+- **Styling**: Vanilla CSS (CSS Modules / Media Queries)
+- **Deployment**: Vercel
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📝 ライセンス
+このプロジェクトのソースコードはオープンソースベースですが、テキストコンテンツ、画像、動画、およびクラゲのトラッキングデータ・設計図等の資産の無断転載・再利用はお控えください。

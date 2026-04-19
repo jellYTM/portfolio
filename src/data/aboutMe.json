@@ -1,0 +1,241 @@
+{
+  "ja": {
+    "profile": {
+      "title": "Profile",
+      "mainImage": "/Me3.jpg",
+      "coverImage": "/Me4.jpg",
+      "data": {
+        "nameLabel": "氏名",
+        "name": "竹内 優輝 （Masaki Takeuchi）",
+        "genderLabel": "性別",
+        "gender": "男",
+        "birthdayLabel": "誕生日",
+        "birthday": "2004年 12月 1日 （21歳）",
+        "belongLabel": "所属",
+        "belong": "名古屋大学 理学部 生命理学科",
+        "gradeLabel": "学年",
+        "grade": "学部 3年"
+      }
+    },
+    "history": {
+      "title": "海月との歩み",
+      "paragraphs": [
+        "小学生の頃、母親に買ってもらった危険生物の図鑑でクラゲに興味を持つ",
+        "中学ではいつの間にかアイデンティティへ",
+        "高校の時に所属していた自然科学部で研究を始める",
+        "そして現在に至る…"
+      ]
+    },
+    "programming": {
+      "title": "プログラミングとの出会い",
+      "paragraphs": [
+        "割と昔から興味と憧れだけはあった。",
+        "高校生の頃、研究のためPythonを学習",
+        "そこから開発にのめりこむ",
+        "根性があればなんでも作れると思っている"
+      ]
+    },
+    "careers": {
+      "title": "経歴",
+      "levelLabels": {
+        "formal": "基本情報",
+        "academic": "＋ 実績・活動",
+        "personal": "＋ プライベート"
+      },
+      "items": [
+        {
+          "date": "2020年 4月",
+          "event": "愛知県立半田高等学校 入学",
+          "type": "formal"
+        },
+        {
+          "date": "2021年 4月",
+          "event": "マリンチャレンジプログラム2021 「カシオソームの動態の軌跡」 採択",
+          "type": "academic"
+        },
+        {
+          "date": "2021年 9月",
+          "event": "水産学会秋季大会 高校生ポスターの部 発表｜奨励賞受賞",
+          "type": "academic"
+        },
+        {
+          "date": "2023年 3月",
+          "event": "東海フェスタ 2022 「泳げ！サカサクラゲ君」 発表｜優秀賞受賞",
+          "type": "academic"
+        },
+        {
+          "date": "2023年 3月",
+          "event": "愛知県立半田高等学校 卒業",
+          "type": "formal"
+        },
+        {
+          "date": "2023年 3月 ~ 2024年3月",
+          "event": "浪人（宅浪）",
+          "type": "personal"
+        },
+        {
+          "date": "2024年 4月",
+          "event": "名古屋大学 理学部 入学",
+          "type": "formal"
+        },
+        {
+          "date": "2025年 4月",
+          "event": "名古屋大学 理学部 生命理学科 分属",
+          "type": "formal"
+        },
+        {
+          "date": "2025年 5月",
+          "event": "第1回システム行動学研究会 ポスター発表",
+          "type": "academic"
+        },
+        {
+          "date": "2025年 7月",
+          "event": "学生アイデアファクトリー サマーキャンプ参加",
+          "type": "academic"
+        },
+        {
+          "date": "2025年 9月",
+          "event": "第96回日本動物学会 名古屋大会 ポスター発表",
+          "type": "academic"
+        },
+        {
+          "date": "2025年 9月",
+          "event": "日本ベントス学会・日本プランクトン学会 合同大会 ポスター発表",
+          "type": "academic"
+        },
+        {
+          "date": "2025年 10月",
+          "event": "学生アイデアファクトリー ファイナルプレゼンテーション ファイナリスト発表 審査委員特別賞受賞",
+          "type": "academic"
+        },
+        {
+          "date": "2028年 3月",
+          "event": "名古屋大学 理学部 生命理学科 卒業（見込）",
+          "type": "formal"
+        }
+      ]
+    }
+  },
+  "en": {
+    "profile": {
+      "title": "Profile",
+      "mainImage": "/Me3.jpg",
+      "coverImage": "/Me4.jpg",
+      "data": {
+        "nameLabel": "Name",
+        "name": "Masaki Takeuchi",
+        "genderLabel": "Gender",
+        "gender": "Male",
+        "birthdayLabel": "Birthday",
+        "birthday": "Dec. 1st, 2004. (21yrs)",
+        "belongLabel": "Belong",
+        "belong": "Biological Science, Nagoya University",
+        "gradeLabel": "Grade",
+        "grade": "3rd year"
+      }
+    },
+    "history": {
+      "title": "Journey with Jellyfish",
+      "paragraphs": [
+        "Became interested in jellyfish when my mother bought me an encyclopedia of dangerous creatures in elementary school.",
+        "In middle school, it naturally became part of my identity.",
+        "Started researching jellyfish in the natural science club during high school.",
+        "And that brings me to the present..."
+      ]
+    },
+    "programming": {
+      "title": "Encounter with Programming",
+      "paragraphs": [
+        "I've always had an interest and admiration for it.",
+        "Learned Python for research purposes in high school.",
+        "Became deeply engrossed in development from then on.",
+        "I believe you can build anything as long as you have the dedication."
+      ]
+    },
+    "careers": {
+      "title": "History",
+      "levelLabels": {
+        "formal": "Basic Info",
+        "academic": "+ Achievements",
+        "personal": "+ Personal"
+      },
+      "items": [
+        {
+          "date": "April 2020",
+          "event": "Entered Aichi Prefectural Handa High School",
+          "type": "formal"
+        },
+        {
+          "date": "April 2021",
+          "event": "Adopted for Marine Challenge Program 2021 \"Trajectory of Cassiosome Dynamics\"",
+          "type": "academic"
+        },
+        {
+          "date": "September 2021",
+          "event": "Autumn Meeting of the Japanese Society of Fisheries Science, High School Poster Session | Encouragement Award",
+          "type": "academic"
+        },
+        {
+          "date": "March 2023",
+          "event": "Presented at Tokai Festa 2022 \"Swim! Cassiopea\" | Excellence Award",
+          "type": "academic"
+        },
+        {
+          "date": "March 2023",
+          "event": "Graduated from Aichi Prefectural Handa High School",
+          "type": "formal"
+        },
+        {
+          "date": "March 2023 ~ March 2024",
+          "event": "Gap year studying at home",
+          "type": "personal"
+        },
+        {
+          "date": "April 2024",
+          "event": "Entered Nagoya University, School of Science",
+          "type": "formal"
+        },
+        {
+          "date": "April 2025",
+          "event": "Assigned to Department of Biological Science, School of Science, Nagoya University",
+          "type": "formal"
+        },
+        {
+          "date": "May 2025",
+          "event": "Poster Presentation at the 1st Systems Ethology Workshop",
+          "type": "academic"
+        },
+        {
+          "date": "July 2025",
+          "event": "Participated in Student Idea Factory Summer Camp",
+          "type": "academic"
+        },
+        {
+          "date": "August 2025",
+          "event": "Poster Presentation at the 1st Systems Ethology Workshop",
+          "type": "academic"
+        },
+        {
+          "date": "September 2025",
+          "event": "Poster Presentation at the 96th Annual Meeting of the Zoological Society of Japan",
+          "type": "academic"
+        },
+        {
+          "date": "September 2025",
+          "event": "Poster Presentation at the Joint Meeting of the Plankton Society of Japan and the Japanese Association of Benthology",
+          "type": "academic"
+        },
+        {
+          "date": "October 2025",
+          "event": "Student Idea Factory Final Presentation Finalist | Jury's Special Award",
+          "type": "academic"
+        },
+        {
+          "date": "March 2028",
+          "event": "Expected Graduation from Department of Biological Science, School of Science, Nagoya University",
+          "type": "formal"
+        }
+      ]
+    }
+  }
+}

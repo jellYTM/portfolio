@@ -1,0 +1,42 @@
+{
+  "ja": {
+    "title": "お問い合わせ / SNS",
+    "contacts": [
+      {
+        "type": "email",
+        "url": "mailto:t.masaki1226@outlook.jp",
+        "id": "t.masaki1226@outlook.jp"
+      },
+      {
+        "type": "x",
+        "url": "https://x.com/nj8Jr31dRi4mqy8",
+        "id": "@nj8Jr31dRi4mqy8"
+      },
+      {
+        "type": "instagram",
+        "url": "https://www.instagram.com/tj.masaki/",
+        "id": "@tj.masaki"
+      }
+    ]
+  },
+  "en": {
+    "title": "Contact / SNS",
+    "contacts": [
+      {
+        "type": "email",
+        "url": "mailto:t.masaki1226@outlook.jp",
+        "id": "t.masaki1226@outlook.jp"
+      },
+      {
+        "type": "x",
+        "url": "https://x.com/nj8Jr31dRi4mqy8",
+        "id": "@nj8Jr31dRi4mqy8"
+      },
+      {
+        "type": "instagram",
+        "url": "https://www.instagram.com/tj.masaki/",
+        "id": "@tj.masaki"
+      }
+    ]
+  }
+}

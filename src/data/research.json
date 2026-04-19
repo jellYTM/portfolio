@@ -1,0 +1,32 @@
+{
+  "ja": {
+    "headerText": "まだ世に出していないものが多く、学会で発表した内容を軽く掲載しています。",
+    "items": [
+      {
+        "id": "rs-pulsation",
+        "titleLines": [
+          "拍動パターンの",
+          "自動分類・種間比較"
+        ],
+        "imageUrl": "/JellyfishTrackingSystem.gif",
+        "altText": "Jellyfish Tracking System",
+        "description": "開発物にあるJellyfish Tracking Systemを用いてクラゲの拍動リズムをトラックし、機械学習アルゴリズムを用いて分類し、系統比較をする研究をしています。"
+      }
+    ]
+  },
+  "en": {
+    "headerText": "Many of these projects are not public yet. What's shown here is briefly featured content from academic conferences.",
+    "items": [
+      {
+        "id": "rs-pulsation",
+        "titleLines": [
+          "Automatic Classification and",
+          "Interspecific Comparison of Pulsation Patterns"
+        ],
+        "imageUrl": "/JellyfishTrackingSystem.gif",
+        "altText": "Jellyfish Tracking System",
+        "description": "I am conducting research classifying jellyfish pulsation rhythms through machine learning algorithms and phylogenetically comparing them using the custom-built Jellyfish Tracking System featured in the Products section."
+      }
+    ]
+  }
+}

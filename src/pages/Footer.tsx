@@ -1,14 +1,43 @@
 import mail from "/mail.png"
 import X from "/X.png"
 import Instagram from "/Instagram.png"
+import { LocalizedFooter } from "../types/content";
+import footerDataJson from "../data/footer.json";
 
-function Footer() {
+const localizedData: LocalizedFooter = footerDataJson;
+
+interface FooterProps {
+    lang: 'ja' | 'en';
+}
+
+function Footer({ lang }: FooterProps) {
+    const data = localizedData[lang];
     return (
         <div id='footer'>
-            <ul>
-                <li><a href="mailto:t.masaki1226@outlook.jp"></a><img src={mail} /></li>
-                <li><a href="https://x.com/nj8Jr31dRi4mqy8"></a><img src={X} /></li>
-                <li><a href="https://www.instagram.com/tj.masaki/?igsh=MWc5OW9sNTV3cGF4Nw%3D%3D#"></a><img src={Instagram} /></li>
+            <div className='footer-info'>
+                <h3>{data.title}</h3>
+                <div className="footer-mobile-ids">
+                    {data.contacts.map((c, idx) => (
+                        <p key={idx}>{c.type === 'email' ? 'Mail' : c.type === 'x' ? 'X' : 'Instagram'}: {c.id}</p>
+                    ))}
+                </div>
+            </div>
+            <ul className="footer-links">
+                {data.contacts.map((contact, idx) => {
+                    let imgSrc = "";
+                    if (contact.type === "email") imgSrc = mail;
+                    if (contact.type === "x") imgSrc = X;
+                    if (contact.type === "instagram") imgSrc = Instagram;
+                    
+                    return (
+                        <li key={idx}>
+                            <a href={contact.url} target="_blank" rel="noopener noreferrer">
+                                <img src={imgSrc} alt={contact.type} />
+                                <span className="footer-desktop-id">{contact.id}</span>
+                            </a>
+                        </li>
+                    );
+                })}
             </ul>
         </div>
     )

@@ -1,0 +1,158 @@
+{
+  "ja": {
+    "mainTitle": "主要な開発物",
+    "mainItems": [
+      {
+        "id": "prod-jts",
+        "title": "Jellyfish Tracking System",
+        "imageUrl": "/JellyfishTrackingSystem.gif",
+        "altText": "Jellyfish Tracking System",
+        "subtitle": "現在開発中です",
+        "descriptions": [
+          "クラゲの行動解析を行うために作成しています。",
+          "とりあえず写真のようなトラッキングは可能に…",
+          "いつかはオープンソースにする予定です。",
+          "ご連絡いただければ、開発済みの機能は使えるようにします。",
+          "こんな機能欲しいという声も待ってます。"
+        ]
+      },
+      {
+        "id": "prod-newsr",
+        "title": "News R",
+        "imageUrl": "/NewsR.png",
+        "altText": "News R",
+        "descriptions": [
+          "エビングハウスの忘却曲線に基づいてリマインドしてくれるLINEBotです。",
+          "浪人の時に効率的な暗記をするために作成しました。",
+          "GASで作成し、データベースにスプレッドシートを用ました。",
+          "軽くですがバックエンドをここで初めて実装しました。",
+          "今ではサイエンスなニュース等のリマインドをしてもらっています、"
+        ],
+        "link": "https://github.com/jellYTM/News_R",
+        "linkText": "Source Code"
+      },
+      {
+        "id": "prod-portfolio",
+        "title": "Portfolio",
+        "imageUrl": "/icon.png",
+        "altText": "Portfolio",
+        "descriptions": [
+          "このポートフォリオです。",
+          "クラゲのアニメーションはThree.jsで生成しています。",
+          "動画のフレーム20枚から27個のプロパティを定規で測ってデータを作成しています。",
+          "いづれクラゲのアニメの種類を増やすときは骨格推定から楽にやりたいです。"
+        ],
+        "link": "https://github.com/jellYTM/portfolio",
+        "linkText": "Source Code"
+      }
+    ],
+    "otherTitle": "その他の開発物",
+    "otherItems": [
+      {
+        "id": "prod-album",
+        "title": "Album Template",
+        "imageUrl": "/AlbumTemplate.png",
+        "altText": "Album Template",
+        "descriptions": [
+          "GASで作ったWebページのテンプレートです。",
+          "GASにしては頑張ったと思います。",
+          "浪人期に作りました。"
+        ],
+        "link": "https://github.com/jellYTM/Album_Template1",
+        "linkText": "Source Code"
+      },
+      {
+        "id": "prod-cac",
+        "title": "Coyote AI Competition",
+        "imageUrl": "/CoyoteAICompetition.png",
+        "altText": "Coyote AI Competition",
+        "descriptions": [
+          "Coyoteというカードゲームで戦わせるAIを作りました。",
+          "初めてのベイズ推定を使った実装です。",
+          "残りカードの情報から合計値の事前分布を作り、コヨーテ宣言をしていない事実を事後分布として扱いました。（実際は事後確率を正規化定数、条件付き確率を階段関数として計算しています。）",
+          "スポンサー賞でKateSawada賞をいただきました。"
+        ],
+        "link": "https://github.com/coyote-AI-competition/resource",
+        "linkText": "Source Code"
+      }
+    ]
+  },
+  "en": {
+    "mainTitle": "Main Products",
+    "mainItems": [
+      {
+        "id": "prod-jts",
+        "title": "Jellyfish Tracking System",
+        "imageUrl": "/JellyfishTrackingSystem.gif",
+        "altText": "Jellyfish Tracking System",
+        "subtitle": "Currently in development",
+        "descriptions": [
+          "Created specifically for behavioral analysis of jellyfish.",
+          "Tracking as shown in the preview is currently possible...",
+          "I plan to make it open-source eventually.",
+          "Contact me if you'd like to test the features already developed.",
+          "Let me know if you have any feature requests!"
+        ]
+      },
+      {
+        "id": "prod-newsr",
+        "title": "News R",
+        "imageUrl": "/NewsR.png",
+        "altText": "News R",
+        "descriptions": [
+          "A LINE Bot that sends reminders based on the Ebbinghaus forgetting curve.",
+          "Built to memorize things efficiently while studying for exams.",
+          "Created using GAS with a Spreadsheet serving as the database.",
+          "This was my first minor attempt at backend implementation.",
+          "Now it just reminds me of various science news."
+        ],
+        "link": "https://github.com/jellYTM/News_R",
+        "linkText": "Source Code"
+      },
+      {
+        "id": "prod-portfolio",
+        "title": "Portfolio",
+        "imageUrl": "/icon.png",
+        "altText": "Portfolio",
+        "descriptions": [
+          "This exact portfolio website.",
+          "The jellyfish animation is generated using Three.js.",
+          "I manually measured 27 properties across 20 video frames to construct the dataset.",
+          "When adding more animations later, I want to use posture estimation to automate the measurement."
+        ],
+        "link": "https://github.com/jellYTM/portfolio",
+        "linkText": "Source Code"
+      }
+    ],
+    "otherTitle": "Other Products",
+    "otherItems": [
+      {
+        "id": "prod-album",
+        "title": "Album Template",
+        "imageUrl": "/AlbumTemplate.png",
+        "altText": "Album Template",
+        "descriptions": [
+          "A web page template made with GAS.",
+          "I think it's pretty solid for GAS.",
+          "Created this during my gap year studying."
+        ],
+        "link": "https://github.com/jellYTM/Album_Template1",
+        "linkText": "Source Code"
+      },
+      {
+        "id": "prod-cac",
+        "title": "Coyote AI Competition",
+        "imageUrl": "/CoyoteAICompetition.png",
+        "altText": "Coyote AI Competition",
+        "descriptions": [
+          "I made an AI for the card game 'Coyote'.",
+          "My first implementation utilizing Bayesian inference.",
+          "Created a prior distribution of the sum based on remaining cards, and treated the fact no coyote declaration was made as the posterior distribution. (Posterior probabilities are calculated as normalizing constants, and conditional probabilities as step functions.)",
+          "Awarded the sponsor 'KateSawada Prize'."
+        ],
+        "link": "https://github.com/coyote-AI-competition/resource",
+        "linkText": "Source Code"
+      }
+    ]
+  }
+}

@@ -10,22 +10,26 @@ import Research from './pages/Research.tsx'
 import Footer from './pages/Footer.tsx'
 import { Analytics } from '@vercel/analytics/react'
 
+import { useState } from 'react'
+
 function App() {
+  const [lang, setLang] = useState<'ja' | 'en'>('ja');
+
   return (
     <>
       <BrowserRouter>
         <div className='content'>
-          <Header />
+          <Header lang={lang} setLang={setLang} />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/AboutMe' element={<AboutMe />} />
-            <Route path='/Skill' element={<Skill />} />
-            <Route path='/Products' element={<Products />} />
-            <Route path='/MyJellyfish' element={<MyJellyfish />} />
-            <Route path='/Research' element={<Research />} />
+            <Route path='/AboutMe' element={<AboutMe lang={lang} />} />
+            <Route path='/Skill' element={<Skill lang={lang} />} />
+            <Route path='/Products' element={<Products lang={lang} />} />
+            <Route path='/MyJellyfish' element={<MyJellyfish lang={lang} />} />
+            <Route path='/Research' element={<Research lang={lang} />} />
           </Routes>
         </div>
-        <Footer />
+        <Footer lang={lang}/>
       </BrowserRouter>
       <Analytics />
     </>

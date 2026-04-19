@@ -13,6 +13,10 @@ function Home() {
                     <p className="pc">Please hover the mouse over</p>
                     <p className="tablet">Please tap Here</p>
                     <p className="phone">I want you to watch from PC or tablet...</p>
+                    <div className="scroll-hint" onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}>
+                        <p style={{ margin: 0, fontSize: '12px', letterSpacing: '2px' }}>SNS & Contact</p>
+                        <span style={{ fontSize: '20px' }}>▼</span>
+                    </div>
                 </div>
                 <img className="blueprint" id="blueprint1" src={blueprint1}/>
                 <img className="blueprint" id="blueprint2" src={blueprint2}/>

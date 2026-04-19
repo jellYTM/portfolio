@@ -1,0 +1,50 @@
+{
+    "ja": {
+        "links": [
+            {
+                "path": "/AboutMe",
+                "name": "About me"
+            },
+            {
+                "path": "/Skill",
+                "name": "スキル"
+            },
+            {
+                "path": "/Products",
+                "name": "開発物"
+            },
+            {
+                "path": "/MyJellyfish",
+                "name": "クラゲ"
+            },
+            {
+                "path": "/Research",
+                "name": "研究"
+            }
+        ]
+    },
+    "en": {
+        "links": [
+            {
+                "path": "/AboutMe",
+                "name": "About me"
+            },
+            {
+                "path": "/Skill",
+                "name": "Skills"
+            },
+            {
+                "path": "/Products",
+                "name": "Products"
+            },
+            {
+                "path": "/MyJellyfish",
+                "name": "Jellyfish"
+            },
+            {
+                "path": "/Research",
+                "name": "Research"
+            }
+        ]
+    }
+}

@@ -1,21 +1,38 @@
-import { useState } from "react"
-import { JellyfishApp } from "./JellyfishAnimation"
-import JellyfishTrackingSystem from "/JellyfishTrackingSystem.gif"
+import { useState } from "react";
+import { JellyfishApp } from "./JellyfishAnimation";
+import { LocalizedResearch } from "../types/content";
+import researchDataJson from "../data/research.json";
 
-function Research() {
+const localizedData: LocalizedResearch = researchDataJson;
+
+interface ResearchProps {
+    lang: 'ja' | 'en';
+}
+
+function Research({ lang }: ResearchProps) {
+    const researchData = localizedData[lang];
     const [idx, setIdx] = useState(0);
     return (
         <div className='wrapper'> 
             <div className='container'>
                 <div className='last-flex-wrapper'>
-                    <p className="left-title2">まだ世に出していないものが多く、学会で発表した内容を軽く掲載しています。</p>
-                    <div className="flexbox">
-                        <div className="flexImg2"><img src={JellyfishTrackingSystem} /></div>
-                        <div className="flexInfo">
-                            <h2>拍動パターンの<br/>自動分類・種間比較</h2>
-                            <p>開発物にあるJellyfish Tracking Systemを用いてクラゲの拍動リズムをトラックし、機械学習アルゴリズムを用いて分類し、系統比較をする研究をしています。</p>
+                    <p className="left-title2">{researchData.headerText}</p>
+                    {researchData.items.map((item) => (
+                        <div className="flexbox" key={item.id}>
+                            <div className="flexImg2"><img src={item.imageUrl} alt={item.altText} /></div>
+                            <div className="flexInfo">
+                                <h2>
+                                    {item.titleLines.map((line, i) => (
+                                        <span key={i}>
+                                            {line}
+                                            {i < item.titleLines.length - 1 && <br/>}
+                                        </span>
+                                    ))}
+                                </h2>
+                                <p>{item.description}</p>
+                            </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
             </div>
             <div className="JellyfishApp-background">
