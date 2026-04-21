@@ -1,11 +1,13 @@
-.container {
+#Home {
+  display: flex;
   z-index: 1;
   position: relative;
+  width: 100%;
 
-  min-height: calc(100vh - 88px);
+  min-height: calc(100dvh - 88px);
 
   @media screen and (max-width: 600px) {
-    min-height: calc(100vh - 58px);
+    min-height: calc(100dvh - 58px);
   }
 }
 
@@ -27,9 +29,7 @@
   }
 }
 
-#Home {
-  display: flex;
-}
+
 
 .wrapper {
   position: relative;
@@ -39,9 +39,9 @@
   text-align: center;
 
   position: absolute;
-  top: 88px;
+  top: 0;
 
-  height: calc(100vh - 88px);
+  height: calc(100dvh - 88px);
   width: 100%;
   z-index: 2;
 
@@ -53,8 +53,8 @@
   background-color: rgba(10, 10, 10, 0.2);
 
   @media (max-width: 600px) {
-    top: 58px;
-    height: calc(100vh - 58px);
+    top: 0;
+    height: calc(100dvh - 58px);
   }
 }
 
@@ -68,6 +68,32 @@
   opacity: 0.8;
   cursor: pointer;
   transition: opacity 0.3s ease;
+}
+
+.scroll-hint p {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.scroll-hint span {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .scroll-hint {
+    bottom: 12px;
+  }
+  
+  .scroll-hint p {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  
+  .scroll-hint span {
+    font-size: 16px;
+    margin-top: -2px;
+  }
 }
 
 .scroll-hint:hover {
@@ -99,18 +125,18 @@
 
 #blueprint1 {
   position: absolute;
-  top: 88px;
+  top: 0;
   right: 0;
   padding: 0 2.5vw;
   margin-right: 5.0vw;
 
-  height: calc((100vh - 88px) / 2);
+  height: calc((100dvh - 88px) / 2);
   width: auto;
   opacity: 0;
   z-index: -1;
 
   @media screen and (max-width: 600px) {
-    top: 58px;
+    top: 0;
     width: 0;
     height: auto;
 
@@ -121,19 +147,19 @@
 
 #blueprint2 {
   position: absolute;
-  top: calc((100vh - 88px) / 2 + 88px);
+  top: calc((100dvh - 88px) / 2);
   right: 0;
   padding: 0 2.5vw;
   margin-right: 5.0vw;
 
 
-  height: calc((100vh - 88px) / 2);
+  height: calc((100dvh - 88px) / 2);
   width: auto;
   opacity: 0;
   z-index: -1;
 
   @media screen and (max-width: 600px) {
-    top: calc((100vw - 58px) / 2 + 58px);
+    top: calc((100vw - 58px) / 2);
     width: 0;
     height: auto;
 
@@ -198,14 +224,14 @@
 
 #JellyfishApp-container #JellyfishApp {
   position: absolute;
-  top: 88px;
+  top: 0;
 
-  height: calc(100vh - 88px);
+  height: calc(100dvh - 88px);
   width: 100%;
 
   @media (max-width: 600px) {
-    top: 58px;
-    height: calc(100vh - 58px);
+    top: 0;
+    height: calc(100dvh - 58px);
   }
 }
 
