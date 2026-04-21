@@ -84,21 +84,6 @@
   font-size: 20px;
 }
 
-@media screen and (max-width: 600px) {
-  .scroll-hint {
-    bottom: 12px;
-  }
-  
-  .scroll-hint p {
-    font-size: 10px;
-    letter-spacing: 1px;
-  }
-  
-  .scroll-hint span {
-    font-size: 16px;
-    margin-top: -2px;
-  }
-}
 
 .scroll-hint:hover {
   opacity: 1;
