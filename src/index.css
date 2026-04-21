@@ -1,4 +1,4 @@
-#root { 
+#root {
   height: 100%;
   width: 100%;
 
@@ -168,7 +168,7 @@ nav ul img:hover {
     gap: 15px;
     padding-top: 10px;
   }
-  
+
   .footer-links img {
     width: 28px;
     height: 28px;
@@ -208,19 +208,29 @@ p {
 h2 {
   font-size: calc(4 / 170 * 100vw + 9.9px);
 
-  @media screen and (max-width: 360px) { 
+  @media screen and (max-width: 360px) {
     font-size: 18px
   }
 }
 
 @media (max-width: 600px) {
-    p {font-size: 12px;}
-    li {font-size: 12px;}
+  p {
+    font-size: 12px;
+  }
+
+  li {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 360px) {
-  p {font-size: 10px;}
-  li {font-size: 10px;}
+  p {
+    font-size: 10px;
+  }
+
+  li {
+    font-size: 10px;
+  }
 }
 
 a {
@@ -233,13 +243,13 @@ a:hover {
   color: rgb(119, 119, 119);
 }
 
-body {
+body, html {
   margin: 0;
   padding: 0;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-
+  background-color: #0B0C10;
 }
 
 h1 {
@@ -264,9 +274,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -295,7 +307,7 @@ button:focus-visible {
   .lang-toggle-btn {
     margin-right: 0;
     position: fixed;
-    bottom: 25px; 
+    bottom: 25px;
     right: 15px;
     z-index: 1000;
     width: 42px;
@@ -307,12 +319,12 @@ button:focus-visible {
     align-items: center;
     font-size: 13px;
     font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.8);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
     background: rgba(40, 40, 60, 0.85);
     backdrop-filter: blur(4px);
     transition: all 0.3s ease, bottom 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
-  
+
   .lang-toggle-btn.at-bottom {
     bottom: 75px;
   }
@@ -323,9 +335,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
