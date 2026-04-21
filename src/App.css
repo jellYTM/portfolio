@@ -1,4 +1,4 @@
-#Home {
+#Home, .container {
   display: flex;
   z-index: 1;
   position: relative;
@@ -9,6 +9,10 @@
   @media screen and (max-width: 600px) {
     min-height: calc(100dvh - 58px);
   }
+}
+
+.container {
+  display: block;
 }
 
 .pc {
