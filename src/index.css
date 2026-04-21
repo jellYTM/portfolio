@@ -243,7 +243,11 @@ a:hover {
   color: rgb(119, 119, 119);
 }
 
-body, html {
+html {
+  background-color: #0B0C10;
+}
+
+body {
   margin: 0;
   padding: 0;
   place-items: center;
