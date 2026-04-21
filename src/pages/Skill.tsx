@@ -23,6 +23,7 @@ function Skill({ lang }: SkillProps) {
                                 {category.items.map((item) => (
                                     <div className="flexbox-container" key={item.id}>
                                         <img className="flexbox-container-image" src={item.imageUrl} alt={item.altText} />
+                                        <p className="skill-name">{item.altText}</p>
                                         <div className="flexbox-container-info">
                                             {item.descriptions.map((desc, i) => (
                                                 <p key={i}>{desc}</p>

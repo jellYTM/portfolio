@@ -334,7 +334,14 @@
   width: 30%;
   height: auto;
 
-  margin: 2.5vw 35%;
+  margin: 2.5vw 35% 1vw 35%;
+}
+
+.skill-name {
+  text-align: center;
+  margin: 0 0 2vw 0;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .flexbox-container-image2 {
