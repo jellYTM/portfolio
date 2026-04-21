@@ -19,7 +19,7 @@
             "imageUrl": "/r.png",
             "altText": "R",
             "descriptions": [
-              "グラフの作成で少し使用",
+              "系統樹の作成で少し使用",
               "最近は大体Python"
             ],
             "creditLink": "https://www.flaticon.com/free-icons/r",
@@ -32,7 +32,7 @@
             "altText": "HTML5",
             "descriptions": [
               "高３の時に憧れで勉強しました。",
-              "最近はtsx"
+              "最近はtsxを使用"
             ]
           },
           {
@@ -50,7 +50,7 @@
             "altText": "JavaScript",
             "descriptions": [
               "js自身で書いたことはほぼ皆無",
-              "大体GASかtsで",
+              "大体GASかTSで",
               "paizaのコーディングチェックで使ったくらい"
             ]
           },
@@ -59,7 +59,7 @@
             "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
             "altText": "TypeScript",
             "descriptions": [
-              "サークルの先輩に教えていただいた",
+              "サークルの先輩に教えて頂いた",
               "なんやかんや使いやすい"
             ]
           },
@@ -82,13 +82,24 @@
             "altText": "C#",
             "descriptions": [
               "Unityで使用",
-              "あんまり開発経験はないです"
+              "Windows用ソフトウェアで",
+              "バックエンドも実装しました"
+            ]
+          },
+          {
+            "id": "lang-kotlin",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg",
+            "altText": "Kotlin",
+            "descriptions": [
+              "Androidアプリ開発で使用",
+              "Coroutinesでの非同期処理を実装",
+              "理解には苦しみました"
             ]
           }
         ]
       },
       {
-        "categoryName": "Framework",
+        "categoryName": "Framework・Library",
         "items": [
           {
             "id": "fw-react",
@@ -105,6 +116,52 @@
             "altText": "Node.js",
             "descriptions": [
               "typescriptの開発でお世話になってます。"
+            ]
+          },
+          {
+            "id": "fw-flutter",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg",
+            "altText": "flutter",
+            "descriptions": [
+              "Android用のアラームアプリ開発で開発に使用",
+              "Alarmアプリは流石に厳しく、Kotlinへ移行しました"
+            ]
+          },
+          {
+            "id": "lb-numpy",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg",
+            "altText": "numpy",
+            "descriptions": [
+              "画像系と競プロをやるたび偉大さを感じるライブラリ",
+              "numpyマスターに俺はなる！"
+            ]
+          },
+          {
+            "id": "lb-opencv",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg",
+            "altText": "opencv",
+            "descriptions": [
+              "numpyレベルに手になじんでいるライブラリ",
+              "高校時代に、鳥取大学が出しているリファレンスで大半を学習",
+              "大体の物をアルゴリズムを理解した上で実装できます。"
+            ]
+          },
+          {
+            "id": "lb-tensorflow",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
+            "altText": "tensorflow",
+            "descriptions": [
+              "言わずもがなKerasともに使用",
+              "Kerasと一緒に用いてSegNetをAIの補助なしで実装しました。"
+            ]
+          },
+          {
+            "id": "lb-keras",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/keras/keras-original.svg",
+            "altText": "keras",
+            "descriptions": [
+              "画像認識用のモデル作成に常に使用",
+              "tensorflowと一緒に用いてSegNetをAIの補助なしで実装しました。"
             ]
           }
         ]
@@ -126,8 +183,7 @@
             "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
             "altText": "Vercel",
             "descriptions": [
-              "tsとreactと一緒に先輩にご教授いただいた",
-              "脱GASの要因"
+              "tsとreactと一緒に先輩にご教授いただいた"
             ]
           },
           {
@@ -145,7 +201,7 @@
         ]
       },
       {
-        "categoryName": "Software",
+        "categoryName": "Software・Infrastructure",
         "items": [
           {
             "id": "sw-git",
@@ -180,6 +236,31 @@
             "altText": "Unity",
             "descriptions": [
               "サークルの開発で2Dマリオライクなものを作りました"
+            ]
+          },
+          {
+            "id": "if-raspberrypi",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg",
+            "altText": "Raspberry Pi",
+            "descriptions": [
+              "とりあえずRaspberry Pi Picoを買ってLチカだけ、やってみました。",
+              "研究用のハードとして、もっとちゃんと使っていきたい"
+            ]
+          },
+          {
+            "id": "if-debian",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/debian/debian-original.svg",
+            "altText": "Debian",
+            "descriptions": [
+              "chromebookのLinux環境で使っています"
+            ]
+          },
+          {
+            "id": "if-ubuntu",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original.svg",
+            "altText": "Ubuntu",
+            "descriptions": [
+              "WSLで使っています"
             ]
           }
         ]
@@ -218,7 +299,7 @@
             "imageUrl": "/r.png",
             "altText": "R",
             "descriptions": [
-              "Used briefly for graph creation.",
+              "Used briefly for creating phylogenetic trees.",
               "Nowadays I mostly just use Python."
             ],
             "creditLink": "https://www.flaticon.com/free-icons/r",
@@ -281,13 +362,24 @@
             "altText": "C#",
             "descriptions": [
               "Used inside Unity.",
-              "I don't have much development experience here."
+              "Developed Windows software,",
+              "and implemented the backend as well."
+            ]
+          },
+          {
+            "id": "lang-kotlin",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg",
+            "altText": "Kotlin",
+            "descriptions": [
+              "Used in Android app development.",
+              "Implemented asynchronous processing with Coroutines.",
+              "I struggled to understand it."
             ]
           }
         ]
       },
       {
-        "categoryName": "Framework",
+        "categoryName": "Framework・Library",
         "items": [
           {
             "id": "fw-react",
@@ -304,6 +396,52 @@
             "altText": "Node.js",
             "descriptions": [
               "Relied heavily on this for TypeScript development."
+            ]
+          },
+          {
+            "id": "fw-flutter",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg",
+            "altText": "flutter",
+            "descriptions": [
+              "Used for developing an Alarm app on Android.",
+              "Building an Alarm app was quite tough, so I migrated to Kotlin."
+            ]
+          },
+          {
+            "id": "lb-numpy",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg",
+            "altText": "numpy",
+            "descriptions": [
+              "A library that makes me realize its greatness every time I do image processing or competitive programming.",
+              "I will become a Numpy master!"
+            ]
+          },
+          {
+            "id": "lb-opencv",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg",
+            "altText": "opencv",
+            "descriptions": [
+              "A library that I am as familiar with as Numpy.",
+              "Learned most of it in high school using a reference from Tottori University.",
+              "I can implement most components after understanding the algorithm."
+            ]
+          },
+          {
+            "id": "lb-tensorflow",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
+            "altText": "tensorflow",
+            "descriptions": [
+              "Needless to say, I use it alongside Keras.",
+              "Used together with Keras to implement SegNet without AI assistance."
+            ]
+          },
+          {
+            "id": "lb-keras",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/keras/keras-original.svg",
+            "altText": "keras",
+            "descriptions": [
+              "Always used for creating models for image recognition.",
+              "Used together with Tensorflow to implement SegNet without AI assistance."
             ]
           }
         ]
@@ -325,8 +463,7 @@
             "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
             "altText": "Vercel",
             "descriptions": [
-              "Learned alongside TS and React from a senior.",
-              "The main reason I graduated from GAS."
+              "Learned alongside TS and React from a senior."
             ]
           },
           {
@@ -344,7 +481,7 @@
         ]
       },
       {
-        "categoryName": "Software",
+        "categoryName": "Software・Infrastructure",
         "items": [
           {
             "id": "sw-git",
@@ -379,6 +516,31 @@
             "altText": "Unity",
             "descriptions": [
               "Created a 2D Mario-like game for the club."
+            ]
+          },
+          {
+            "id": "if-raspberrypi",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg",
+            "altText": "Raspberry Pi",
+            "descriptions": [
+              "Bought a Raspberry Pi Pico and made an LED blink for now.",
+              "I want to make better use of it as hardware for my research."
+            ]
+          },
+          {
+            "id": "if-debian",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/debian/debian-original.svg",
+            "altText": "Debian",
+            "descriptions": [
+              "Using it in the Linux environment on my Chromebook."
+            ]
+          },
+          {
+            "id": "if-ubuntu",
+            "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original.svg",
+            "altText": "Ubuntu",
+            "descriptions": [
+              "Using it via WSL."
             ]
           }
         ]
